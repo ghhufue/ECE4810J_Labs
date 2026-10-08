@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="hello_world" location="C:/Users/yht/workspace/hello_world" platform="C:/Users/yht/workspace/arty_z7_platform/export/arty_z7_platform/arty_z7_platform.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" systemProject="hello_world_system" sysConfig="arty_z7_platform" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="12cda56e7fab05ffb7a1d45a4ec9577e">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.334694161">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1880012371" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="pmod_app" location="D:/code/ECE4810J/Lab1/vitis_workspace/pmod_app" platform="D:/code/ECE4810J/Lab1/vitis_workspace/platform_section3/export/platform_section3/platform_section3.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" systemProject="pmod_app_system" sysConfig="platform_section3" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="bd18ef7b118155a976b362ea9d9c34a2">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1568365526">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1824869490" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

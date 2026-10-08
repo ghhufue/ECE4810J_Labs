@@ -1,0 +1,69 @@
+
+# ==========================================
+# ECE4810J - Vivado / Vitis 2022.1
+# ==========================================
+
+# 1. Vivado generated directories
+*.cache/
+*.gen/
+*.runs/
+*.hw/
+*.sim/
+*.ip_user_files/
+.Xil/
+.ipcache/
+.jobs/
+
+# 2. Vivado logs and reports
+*.jou
+*.log
+*.str
+*.dcp
+*.rpt
+*.rpx
+*.wdb
+*.wcfg
+*.vcd
+*.pb
+*.wdf
+*.vdi
+*.dmp
+
+# 3. Vitis workspace metadata
+.metadata/
+RemoteSystemsTempFiles/
+
+# 4. Vitis build outputs
+Debug/
+Release/
+
+# Platform generated files
+**/vitis_workspace/*/export/
+**/vitis_workspace/*/zynq_fsbl/
+**/vitis_workspace/*/zynq_fsbl_bsp/
+
+# 5. Compiled binaries
+*.elf
+*.bit
+*.bin
+*.xsa
+*.ltx
+*.o
+*.a
+*.d
+
+# 6. Temporary files
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+*.lock
+
+# 7. Windows temporary files
+Thumbs.db
+Desktop.ini
+
+# 8. Python cache (if used)
+__pycache__/
+*.pyc
