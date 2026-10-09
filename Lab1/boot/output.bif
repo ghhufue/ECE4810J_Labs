@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]D:\code\ECE4810J\Lab1\vitis_workspace\platform_section4\export\platform_section4\sw\platform_section4\boot\fsbl.elf
+	D:\code\ECE4810J\Lab1\vitis_workspace\platform_section4\hw\platform_section4.bit
+	D:\code\ECE4810J\Lab1\vitis_workspace\hello_rtl_multiplier\Debug\hello_rtl_multiplier.elf
+}
