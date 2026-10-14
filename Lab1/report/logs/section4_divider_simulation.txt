@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Oct  9 15:23:57 2026
+# Process ID: 28656
+# Current directory: D:/code/ECE4810J/Lab1/section4/simulation
+# Command line: xsim.exe -log D:\code\ECE4810J\Lab1/report/section4_divider_simulation.txt -mode tcl -source {xsim.dir/divider_sim/xsim_script.tcl}
+# Log file: D:/code/ECE4810J/Lab1/report/section4_divider_simulation.txt
+# Journal file: D:/code/ECE4810J/Lab1/section4/simulation\xsim.jou
+# Running On: DESKTOP-8JOUGG5, OS: Windows, CPU Frequency: 3418 MHz, CPU Physical cores: 20, Host memory: 34122 MB
+#-----------------------------------------------------------
+source xsim.dir/divider_sim/xsim_script.tcl
+# xsim {divider_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+DIVIDER_SIMULATION_PASS: 272 arithmetic cases; AXI skew, backpressure, strobes, busy rejection, reset
+$finish called at time : 102880 ns : File "D:/code/ECE4810J/Lab1/section4/tb_rtl_divider.sv" Line 125
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct  9 15:23:59 2026...

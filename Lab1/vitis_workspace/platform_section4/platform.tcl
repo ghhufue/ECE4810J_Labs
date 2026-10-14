@@ -21,3 +21,5 @@ domain active {standalone_ps7_cortexa9_0}
 platform generate -quick
 platform generate
 platform generate
+platform clean
+platform generate

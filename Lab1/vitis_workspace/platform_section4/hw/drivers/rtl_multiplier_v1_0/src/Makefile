@@ -9,22 +9,18 @@ RELEASEDIR=../../../lib
 INCLUDEDIR=../../../include
 INCLUDES=-I./. -I${INCLUDEDIR}
 
-INCLUDEFILES=$(wildcard *.h)
-LIBSOURCES=$(wildcard *.c)
-OUTS=$(patsubst %.c,%.o,$(LIBSOURCES))
+INCLUDEFILES=*.h
+LIBSOURCES=*.c
+OUTS = *.o
 
 libs:
-	@echo "Compiling rtl_multiplier..."
-ifneq ($(strip $(LIBSOURCES)),)
+	echo "Compiling rtl_multiplier..."
 	$(COMPILER) $(COMPILER_FLAGS) $(EXTRA_COMPILER_FLAGS) $(INCLUDES) $(LIBSOURCES)
 	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OUTS}
-endif
-	$(MAKE) clean
+	make clean
 
 include:
-ifneq ($(strip $(INCLUDEFILES)),)
-	$(CP) $(INCLUDEFILES) $(INCLUDEDIR)
-endif
+	${CP} $(INCLUDEFILES) $(INCLUDEDIR)
 
 clean:
-	rm -rf $(OUTS)
+	rm -rf ${OUTS}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="hello_rtl_divider" location="D:/code/ECE4810J/Lab1/vitis_workspace/hello_rtl_divider" platform="D:/code/ECE4810J/Lab1/vitis_workspace/platform_section4_divider/export/platform_section4_divider/platform_section4_divider.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" systemProject="hello_rtl_divider_system" sysConfig="platform_section4_divider" runtime="C/C++" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="5a56c3e29486da9c801ab6e2de067af9">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.911343363">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.372695756" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

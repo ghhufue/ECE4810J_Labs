@@ -1,0 +1,65 @@
+{
+  "tcl_version": "8.6.12",
+  "tests": [
+    {
+      "command": "avg {70 80 50 60}",
+      "output": "65.0",
+      "result": "PASS"
+    },
+    {
+      "command": "avg {1 2}",
+      "output": "1.5",
+      "result": "PASS"
+    },
+    {
+      "command": "avg {-2 0 2}",
+      "output": "0.0",
+      "result": "PASS"
+    },
+    {
+      "command": "avg {7}",
+      "output": "7.0",
+      "result": "PASS"
+    },
+    {
+      "command": "factorial 3",
+      "output": "6",
+      "result": "PASS"
+    },
+    {
+      "command": "factorial 0",
+      "output": "1",
+      "result": "PASS"
+    },
+    {
+      "command": "factorial 10",
+      "output": "3628800",
+      "result": "PASS"
+    },
+    {
+      "command": "two-fer",
+      "output": "C source: main.c",
+      "result": "PASS"
+    },
+    {
+      "command": "two-fer lab1-1.c",
+      "output": "C source: lab1-1.c",
+      "result": "PASS"
+    },
+    {
+      "command": "avg {}",
+      "output": "avg requires at least one number",
+      "result": "PASS (error rejected)"
+    },
+    {
+      "command": "factorial -1",
+      "output": "factorial requires a nonnegative integer",
+      "result": "PASS (error rejected)"
+    },
+    {
+      "command": "factorial 1.5",
+      "output": "factorial requires a nonnegative integer",
+      "result": "PASS (error rejected)"
+    }
+  ]
+}

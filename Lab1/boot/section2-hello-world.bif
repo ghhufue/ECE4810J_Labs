@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+    [bootloader] D:/code/ECE4810J/Lab1/vitis_workspace/arty_z7_platform/export/arty_z7_platform/sw/arty_z7_platform/boot/fsbl.elf
+    D:/code/ECE4810J/Lab1/vitis_workspace/arty_z7_platform/hw/Zynq_CPU_wrapper.bit
+    D:/code/ECE4810J/Lab1/vitis_workspace/hello_world/Debug/hello_world.elf
+}

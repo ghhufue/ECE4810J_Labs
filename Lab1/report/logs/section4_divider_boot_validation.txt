@@ -1,0 +1,7 @@
+Zynq boot image header and partition verification: PASS
+1. FSBL: offset=0x1700, length=98312, load=0x0, checksum PASS
+2. PL bitstream: offset=0x19740, length=4045568, load=0x0, checksum PASS
+3. Divider application: offset=0x3f5240, length=32776, load=0x100000, checksum PASS
+Image bytes: 4182600
+SHA256: ff39943fda12088f0ac042d644ed4bd418ed807b200ddf30920705dad712235d
+Hardware execution: pending (board unavailable)

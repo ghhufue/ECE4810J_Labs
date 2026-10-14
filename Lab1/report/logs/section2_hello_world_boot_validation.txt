@@ -1,0 +1,7 @@
+Zynq Hello World boot image verification: PASS
+1. FSBL: 98312 bytes, headers PASS, 1 ELF load segments match source
+2. PL bitstream: 4045568 bytes, headers PASS, configuration payload matches source
+3. Hello World application: 32776 bytes, headers PASS, 1 ELF load segments match source
+Image bytes: 4182600
+SHA256: aa885bcf286c7907d3adfba4539dc1bf9d5f24c89bb890ef627ec7c230c51dde
+Hardware execution: not tested (board unavailable)

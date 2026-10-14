@@ -1,0 +1,33 @@
+{
+  "pdf": "Lab1_Report_Group2.pdf",
+  "pages": 14,
+  "images_used": [
+    "images/helloworld.png",
+    "images/section2_helloworld_serial_terminal.png",
+    "images/section3_board_btn0_ld0.jpg",
+    "images/section3_board_btn1_ld1.jpg",
+    "images/section3_board_btn23_ld23.jpg",
+    "images/section3_board_btn2_ld2.jpg",
+    "images/section3_board_btn3_ld3.jpg",
+    "images/section3_board_idle_leds_off.jpg",
+    "images/section3_build.png",
+    "images/section3_implemented_timing.png",
+    "images/section4_divider_build.png",
+    "images/section4_divider_serial_terminal.png",
+    "images/section4_multiplier_build.png",
+    "images/section4_multiplier_serial_terminal.png",
+    "images/section4_utilization.png"
+  ],
+  "photo_placeholders": [],
+  "group": 2,
+  "authors": [
+    {
+      "name": "Yuan Haotong",
+      "student_id": "523370910163"
+    },
+    {
+      "name": "Zhao Tong",
+      "student_id": "523370910137"
+    }
+  ]
+}
