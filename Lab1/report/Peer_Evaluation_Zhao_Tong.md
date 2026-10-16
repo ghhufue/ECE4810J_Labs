@@ -15,12 +15,12 @@ Complete this form independently. For each section, describe your own and your p
 | Section 3 | Board-side testing: verified the button-to-LED behavior on hardware and took six board photos (four single-button, one combo-button, one idle state) | GPIO peripheral design, synthesis and implementation, bitstream and BOOT.BIN packaging; build and timing screenshots | 4 | 5 |
 | Section 4 | Board-side testing: flashed the multiplier and divider boot images, ran the on-board tests and captured the serial evidence (2x3=6; RESULT: 11 tests, 0 failures) | RTL multiplier/divider IP, AXI block design integration, Vitis test applications, utilization screenshot and BOOT.BIN packaging | 4 | 5 |
 | Section 5 (optional) | Not attempted (optional) | Not attempted (optional) |  |  |
-| Section 6 | Completed the Tcl exercises in full (average, factorial, two-fer) | - | 5 | 0 |
-| Section 7 | Wrote the complete post-lab answers | - | 5 | 0 |
+| Section 6 | Wrote the three Tcl procedures (average, factorial, two-fer) and ran them in the Vivado Tcl shell to collect the console output | Cross-checked my Tcl code against the exercise requirements and confirmed the printed results matched the expected values | 5 | 1 |
+| Section 7 | Drafted all post-lab question answers | Reviewed the answers for technical correctness and consistency with the measured results, and pointed out items needing revision | 5 | 1 |
 
 ## Additional contribution notes
 
-My partner owned the Vivado/Vitis design and build pipeline for Sections 2-4, including boot image packaging and the final report compilation. I owned all board-side testing and evidence capture for Sections 2-4 (SD card flashing, boot-mode setup, PuTTY serial capture and board photos) and the complete content of Sections 6-7, and I organized and uploaded the report assets to the group repository.
+My partner owned the Vivado/Vitis design and build pipeline for Sections 2-4, including boot image packaging and the final report compilation. I owned all board-side testing and evidence capture for Sections 2-4 (SD card flashing, boot-mode setup, PuTTY serial capture and board photos), wrote the full content of Sections 6-7, and organized and uploaded the report assets to the group repository. My partner acted as reviewer for Sections 6-7, checking the Tcl results and the post-lab answers before they were merged into the report.
 
 **Evaluator signature (optional):** ____________________  
 **Date (optional):** ____________________
