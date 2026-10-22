@@ -1,0 +1,35 @@
+17:47:00 **** Clean-only build of configuration Debug for project hello_hls_rtl_alu ****
+make clean 
+make: *** No rule to make target 'clean'.  Stop.
+
+17:47:00 Build Finished (took 243ms)
+
+17:47:01 **** Build of configuration Debug for project hello_hls_rtl_alu ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/hls_rtl_alu.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/hls_rtl_alu.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/sw/lab2_platform/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/hls_rtl_alu.d" -MT"src/hls_rtl_alu.o" -o "src/hls_rtl_alu.o" "../src/hls_rtl_alu.c"
+'Finished building: ../src/hls_rtl_alu.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -ID:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/sw/lab2_platform/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: hello_hls_rtl_alu.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/sw/lab2_platform/standalone_ps7_cortexa9_0/bsplib/lib -o "hello_hls_rtl_alu.elf"  ./src/hls_rtl_alu.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hello_hls_rtl_alu.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hello_hls_rtl_alu.elf  |tee "hello_hls_rtl_alu.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 153550	   1176	  22624	 177350	  2b4c6	hello_hls_rtl_alu.elf
+'Finished building: hello_hls_rtl_alu.elf.size'
+' '
+
+17:47:03 Build Finished (took 1s.149ms)

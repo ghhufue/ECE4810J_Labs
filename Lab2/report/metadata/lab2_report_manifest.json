@@ -1,0 +1,191 @@
+{
+  "pdf": "Lab2_Report_Group2.pdf",
+  "markdown": "Lab2_Report_Group2.md",
+  "pages": 18,
+  "figures": [
+    {
+      "file": "images/vivado_multipliers_highlighted.jpg",
+      "page": 2,
+      "caption": "Figure 1. Implemented multiplier leaf cells: RTL in red and HLS in yellow. This view is from the final pipelined ALU system."
+    },
+    {
+      "file": "images/hls_alu_csimulation_pass.jpg",
+      "page": 4,
+      "caption": "Figure 2. HLS ALU C simulation: all 18 selectors covered, with 7,509 vectors and zero failures."
+    },
+    {
+      "file": "images/hls_alu_cosimulation_pass.jpg",
+      "page": 4,
+      "caption": "Figure 3. HLS ALU C/RTL co-simulation report with Verilog Pass status."
+    },
+    {
+      "file": "images/hls_alu_synthesis_summary.jpg",
+      "page": 5,
+      "caption": "Figure 4. HLS ALU synthesis summary, including timing, latency and estimated resources."
+    },
+    {
+      "file": "images/baseline_alus_highlighted.jpg",
+      "page": 6,
+      "caption": "Figure 5. Baseline implemented design: combinational RTL ALU in red and HLS ALU in yellow."
+    },
+    {
+      "file": "images/baseline_utilization_summary.jpg",
+      "page": 6,
+      "caption": "Figure 6. Baseline routed utilization summary for the complete PL system."
+    },
+    {
+      "file": "images/baseline_design_timing_summary.jpg",
+      "page": 7,
+      "caption": "Figure 7. Baseline at the 100 MHz target: setup WNS -87.707 ns; timing constraints are not met."
+    },
+    {
+      "file": "images/vitis_alu_build_finished.jpg",
+      "page": 8,
+      "caption": "Figure 8. Vitis IDE build of hello_hls_rtl_alu completed successfully."
+    },
+    {
+      "file": "images/lab2_alu_selftest.png",
+      "page": 9,
+      "caption": "Figure 9. Actual board self-test: all 18 ALU operations and both 7,509-case totals pass."
+    },
+    {
+      "file": "images/lab2_sd_boot.png",
+      "page": 10,
+      "caption": "Figure 10. Startup output captured for the SD boot test with the final Lab 2 image."
+    },
+    {
+      "file": "images/lab2_sd_interactive_multiplier.png",
+      "page": 10,
+      "caption": "Figure 11. Interactive multiplication: 2 x 3 = 0x00000006 and 65535 x 65535 = 0xfffe0001; both RTL and HLS pass."
+    },
+    {
+      "file": "images/lab2_pynq_jupyter_files.png",
+      "page": 11,
+      "caption": "Figure 12. Jupyter file browser with the board address visible and the supplied notebook directories."
+    },
+    {
+      "file": "images/lab2_pynq_overlay_loaded.png",
+      "page": 11,
+      "caption": "Figure 13. Notebook execution: BaseOverlay(\"base.bit\") completes and prints PYNQ overlay loaded OK; a separate cell prints hello."
+    },
+    {
+      "file": "images/vivado_alus_highlighted.jpg",
+      "page": 12,
+      "caption": "Figure 14. Final implemented design: pipelined RTL ALU in red and HLS ALU in yellow."
+    },
+    {
+      "file": "images/vivado_utilization_summary.jpg",
+      "page": 13,
+      "caption": "Figure 15. Final PL utilization: 4,414 LUTs, 6,598 FFs, 10 DSPs, no block RAM and no latches."
+    },
+    {
+      "file": "images/vivado_design_timing_summary.jpg",
+      "page": 13,
+      "caption": "Figure 16. Final routed timing: setup WNS +1.979 ns and hold WHS +0.013 ns; all timing constraints met."
+    },
+    {
+      "file": "images/lab2_pipe_alu_mul_div_rem.png",
+      "page": 14,
+      "caption": "Figure 17. Signed pipeline checks: MUL(-20,5) = 0xffffff9c; DIV(-20,3) = 0xfffffffa; REM(-20,3) = 0xfffffffe."
+    },
+    {
+      "file": "images/lab2_alu_boundary.png",
+      "page": 14,
+      "caption": "Figure 18. Boundary checks: DIV(123,0) = 0xffffffff; REM(123,0) = 123; DIV(INT_MIN,-1) = 0x80000000."
+    }
+  ],
+  "layout": [
+    {
+      "page": 1,
+      "body_bottom": 147.89
+    },
+    {
+      "page": 2,
+      "body_bottom": 185.0
+    },
+    {
+      "page": 3,
+      "body_bottom": 139.79
+    },
+    {
+      "page": 4,
+      "body_bottom": 92.49
+    },
+    {
+      "page": 5,
+      "body_bottom": 172.85
+    },
+    {
+      "page": 6,
+      "body_bottom": 78.31
+    },
+    {
+      "page": 7,
+      "body_bottom": 199.7
+    },
+    {
+      "page": 8,
+      "body_bottom": 228.65
+    },
+    {
+      "page": 9,
+      "body_bottom": 119.32
+    },
+    {
+      "page": 10,
+      "body_bottom": 94.89
+    },
+    {
+      "page": 11,
+      "body_bottom": 120.94
+    },
+    {
+      "page": 12,
+      "body_bottom": 191.3
+    },
+    {
+      "page": 13,
+      "body_bottom": 80.41
+    },
+    {
+      "page": 14,
+      "body_bottom": 61.59
+    },
+    {
+      "page": 15,
+      "body_bottom": 189.59
+    },
+    {
+      "page": 16,
+      "body_bottom": 244.79
+    },
+    {
+      "page": 17,
+      "body_bottom": 316.99
+    },
+    {
+      "page": 18,
+      "body_bottom": 210.29
+    }
+  ],
+  "group": 2,
+  "date": "2026-10-22",
+  "authors": [
+    {
+      "name": "Yuan Haotong",
+      "student_id": "523370910163"
+    },
+    {
+      "name": "Zhao Tong",
+      "student_id": "523370910137"
+    }
+  ],
+  "basis": "Existing Lab2 sources, tool reports and 2026-10-22 board evidence",
+  "limitations": [
+    "No baseline hardware run captured",
+    "Serial captures use PuTTY",
+    "No measured application speedup",
+    "Logictools not exercised on board"
+  ],
+  "boot_sha256": "9f57c42b36ea5f82667ab36efd79304cbb6b2ceaaef4f7b6c0282296e1ca9d08"
+}

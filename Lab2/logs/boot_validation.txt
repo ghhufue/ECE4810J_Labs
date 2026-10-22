@@ -1,0 +1,10 @@
+Zynq boot image structure validation: PASS
+1. FSBL: offset=0x1700, bytes=98312, load=0x0, header checksum PASS
+2. PL bitstream: offset=0x19740, bytes=4045568, load=0x0, header checksum PASS
+3. Lab 2 application: offset=0x3f5240, bytes=163856, load=0x100000, header checksum PASS
+fsbl.elf: ARM ELF load segments match image bytes, entry=0x0 PASS
+hello_hls_rtl_alu.elf: ARM ELF load segments match image bytes, entry=0x100000 PASS
+PL partition matches generated bitstream (32-bit byte swap); XSA contains identical bitstream PASS
+Image bytes: 4313680
+SHA256: 9f57c42b36ea5f82667ab36efd79304cbb6b2ceaaef4f7b6c0282296e1ca9d08
+Hardware execution: pending (board unavailable)

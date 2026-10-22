@@ -1,0 +1,112 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
+| Date         : Wed Oct 21 17:55:53 2026
+| Host         : DESKTOP-8JOUGG5 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -file D:/code/ECE4810J/Lab2/logs/baseline_utilization_hierarchical.txt
+| Design       : Zynq_CPU_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Routed
+-------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+|                           Instance                          |                                       Module                                      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+| Zynq_CPU_wrapper                                            |                                                                             (top) |       5032 |       4970 |       0 |   62 | 2339 |      0 |      0 |         10 |
+|   Zynq_CPU_i                                                |                                                                          Zynq_CPU |       5032 |       4970 |       0 |   62 | 2339 |      0 |      0 |         10 |
+|     (Zynq_CPU_i)                                            |                                                                          Zynq_CPU |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     hls_alu_0                                               |                                                              Zynq_CPU_hls_alu_0_0 |       1259 |       1259 |       0 |    0 | 1079 |      0 |      0 |          4 |
+|       inst                                                  |                                                      Zynq_CPU_hls_alu_0_0_hls_alu |       1259 |       1259 |       0 |    0 | 1079 |      0 |      0 |          4 |
+|         (inst)                                              |                                                      Zynq_CPU_hls_alu_0_0_hls_alu |        770 |        770 |       0 |    0 |  535 |      0 |      0 |          0 |
+|         CTRL_s_axi_U                                        |                                           Zynq_CPU_hls_alu_0_0_hls_alu_CTRL_s_axi |        140 |        140 |       0 |    0 |  156 |      0 |      0 |          0 |
+|         mul_32ns_32ns_64_2_1_U1                             |                                 Zynq_CPU_hls_alu_0_0_hls_alu_mul_32ns_32ns_64_2_1 |         47 |         47 |       0 |    0 |   34 |      0 |      0 |          4 |
+|         udiv_32ns_32ns_32_36_seq_1_U2                       |                           Zynq_CPU_hls_alu_0_0_hls_alu_udiv_32ns_32ns_32_36_seq_1 |        165 |        165 |       0 |    0 |  166 |      0 |      0 |          0 |
+|           (udiv_32ns_32ns_32_36_seq_1_U2)                   |                           Zynq_CPU_hls_alu_0_0_hls_alu_udiv_32ns_32ns_32_36_seq_1 |         81 |         81 |       0 |    0 |   64 |      0 |      0 |          0 |
+|           hls_alu_udiv_32ns_32ns_32_36_seq_1_divseq_u       |                    Zynq_CPU_hls_alu_0_0_hls_alu_udiv_32ns_32ns_32_36_seq_1_divseq |         84 |         84 |       0 |    0 |  102 |      0 |      0 |          0 |
+|         urem_32ns_32ns_32_36_seq_1_U3                       |                           Zynq_CPU_hls_alu_0_0_hls_alu_urem_32ns_32ns_32_36_seq_1 |        142 |        142 |       0 |    0 |  188 |      0 |      0 |          0 |
+|           (urem_32ns_32ns_32_36_seq_1_U3)                   |                           Zynq_CPU_hls_alu_0_0_hls_alu_urem_32ns_32ns_32_36_seq_1 |         63 |         63 |       0 |    0 |   65 |      0 |      0 |          0 |
+|           hls_alu_urem_32ns_32ns_32_36_seq_1_divseq_u       |                    Zynq_CPU_hls_alu_0_0_hls_alu_urem_32ns_32ns_32_36_seq_1_divseq |         79 |         79 |       0 |    0 |  123 |      0 |      0 |          0 |
+|     hls_multiplier_0                                        |                                                       Zynq_CPU_hls_multiplier_0_0 |         75 |         75 |       0 |    0 |  155 |      0 |      0 |          1 |
+|       inst                                                  |                                        Zynq_CPU_hls_multiplier_0_0_hls_multiplier |         75 |         75 |       0 |    0 |  155 |      0 |      0 |          1 |
+|         (inst)                                              |                                        Zynq_CPU_hls_multiplier_0_0_hls_multiplier |          0 |          0 |       0 |    0 |    4 |      0 |      0 |          0 |
+|         CRTLS_s_axi_U                                       |                            Zynq_CPU_hls_multiplier_0_0_hls_multiplier_CRTLS_s_axi |         75 |         75 |       0 |    0 |  119 |      0 |      0 |          0 |
+|         mul_mul_16ns_16ns_32_4_1_U1                         |               Zynq_CPU_hls_multiplier_0_0_hls_multiplier_mul_mul_16ns_16ns_32_4_1 |          0 |          0 |       0 |    0 |   32 |      0 |      0 |          1 |
+|           hls_multiplier_mul_mul_16ns_16ns_32_4_1_DSP48_0_U |       Zynq_CPU_hls_multiplier_0_0_hls_multiplier_mul_mul_16ns_16ns_32_4_1_DSP48_0 |          0 |          0 |       0 |    0 |   32 |      0 |      0 |          1 |
+|     processing_system7_0                                    |                                                   Zynq_CPU_processing_system7_0_0 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|       inst                                                  |        Zynq_CPU_processing_system7_0_0_processing_system7_v5_5_processing_system7 |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          0 |
+|     ps7_0_axi_periph                                        |                                                       Zynq_CPU_ps7_0_axi_periph_0 |        535 |        474 |       0 |   61 |  614 |      0 |      0 |          0 |
+|       s00_couplers                                          |                                                           s00_couplers_imp_XCRFKQ |        380 |        319 |       0 |   61 |  494 |      0 |      0 |          0 |
+|         auto_pc                                             |                                                                Zynq_CPU_auto_pc_0 |        380 |        319 |       0 |   61 |  494 |      0 |      0 |          0 |
+|           inst                                              |          Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_axi_protocol_converter |        380 |        319 |       0 |   61 |  494 |      0 |      0 |          0 |
+|             gen_axilite.gen_b2s_conv.axilite_b2s            |                             Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s |        380 |        319 |       0 |   61 |  494 |      0 |      0 |          0 |
+|               (gen_axilite.gen_b2s_conv.axilite_b2s)        |                             Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s |          1 |          1 |       0 |    0 |    1 |      0 |      0 |          0 |
+|               RD.ar_channel_0                               |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_ar_channel |         62 |         62 |       0 |    0 |   70 |      0 |      0 |          0 |
+|                 (RD.ar_channel_0)                           |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_ar_channel |          0 |          0 |       0 |    0 |   12 |      0 |      0 |          0 |
+|                 ar_cmd_fsm_0                                |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_rd_cmd_fsm |         32 |         32 |       0 |    0 |    2 |      0 |      0 |          0 |
+|                 cmd_translator_0                            |            Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_cmd_translator_1 |         30 |         30 |       0 |    0 |   56 |      0 |      0 |          0 |
+|                   (cmd_translator_0)                        |            Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_cmd_translator_1 |          1 |          1 |       0 |    0 |    3 |      0 |      0 |          0 |
+|                   incr_cmd_0                                |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_incr_cmd_2 |         19 |         19 |       0 |    0 |   18 |      0 |      0 |          0 |
+|                   wrap_cmd_0                                |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_wrap_cmd_3 |         10 |         10 |       0 |    0 |   35 |      0 |      0 |          0 |
+|               RD.r_channel_0                                |                   Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_r_channel |         61 |         14 |       0 |   47 |   24 |      0 |      0 |          0 |
+|                 (RD.r_channel_0)                            |                   Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_r_channel |          0 |          0 |       0 |    0 |   14 |      0 |      0 |          0 |
+|                 rd_data_fifo_0                              | Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_simple_fifo__parameterized1 |         43 |          9 |       0 |   34 |    5 |      0 |      0 |          0 |
+|                 transaction_fifo_0                          | Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_simple_fifo__parameterized2 |         19 |          6 |       0 |   13 |    5 |      0 |      0 |          0 |
+|               SI_REG                                        |                  Zynq_CPU_auto_pc_0_axi_register_slice_v2_1_26_axi_register_slice |        155 |        155 |       0 |    0 |  308 |      0 |      0 |          0 |
+|                 ar.ar_pipe                                  |                 Zynq_CPU_auto_pc_0_axi_register_slice_v2_1_26_axic_register_slice |         56 |         56 |       0 |    0 |   91 |      0 |      0 |          0 |
+|                 aw.aw_pipe                                  |               Zynq_CPU_auto_pc_0_axi_register_slice_v2_1_26_axic_register_slice_0 |         62 |         62 |       0 |    0 |   91 |      0 |      0 |          0 |
+|                 b.b_pipe                                    | Zynq_CPU_auto_pc_0_axi_register_slice_v2_1_26_axic_register_slice__parameterized1 |         10 |         10 |       0 |    0 |   30 |      0 |      0 |          0 |
+|                 r.r_pipe                                    | Zynq_CPU_auto_pc_0_axi_register_slice_v2_1_26_axic_register_slice__parameterized2 |         27 |         27 |       0 |    0 |   96 |      0 |      0 |          0 |
+|               WR.aw_channel_0                               |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_aw_channel |         71 |         71 |       0 |    0 |   74 |      0 |      0 |          0 |
+|                 (WR.aw_channel_0)                           |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_aw_channel |          0 |          0 |       0 |    0 |   16 |      0 |      0 |          0 |
+|                 aw_cmd_fsm_0                                |                  Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_wr_cmd_fsm |         40 |         40 |       0 |    0 |    2 |      0 |      0 |          0 |
+|                 cmd_translator_0                            |              Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_cmd_translator |         31 |         31 |       0 |    0 |   56 |      0 |      0 |          0 |
+|                   (cmd_translator_0)                        |              Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_cmd_translator |          1 |          1 |       0 |    0 |    3 |      0 |      0 |          0 |
+|                   incr_cmd_0                                |                    Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_incr_cmd |         20 |         20 |       0 |    0 |   18 |      0 |      0 |          0 |
+|                   wrap_cmd_0                                |                    Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_wrap_cmd |         10 |         10 |       0 |    0 |   35 |      0 |      0 |          0 |
+|               WR.b_channel_0                                |                   Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_b_channel |         35 |         21 |       0 |   14 |   17 |      0 |      0 |          0 |
+|                 (WR.b_channel_0)                            |                   Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_b_channel |          8 |          8 |       0 |    0 |   13 |      0 |      0 |          0 |
+|                 bid_fifo_0                                  |                 Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_simple_fifo |         21 |          9 |       0 |   12 |    2 |      0 |      0 |          0 |
+|                 bresp_fifo_0                                | Zynq_CPU_auto_pc_0_axi_protocol_converter_v2_1_26_b2s_simple_fifo__parameterized0 |          6 |          4 |       0 |    2 |    2 |      0 |      0 |          0 |
+|       xbar                                                  |                                                                   Zynq_CPU_xbar_0 |        155 |        155 |       0 |    0 |  120 |      0 |      0 |          0 |
+|         inst                                                |                                 Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_axi_crossbar |        155 |        155 |       0 |    0 |  120 |      0 |      0 |          0 |
+|           gen_sasd.crossbar_sasd_0                          |                                Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd |        155 |        155 |       0 |    0 |  120 |      0 |      0 |          0 |
+|             (gen_sasd.crossbar_sasd_0)                      |                                Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_crossbar_sasd |          4 |          4 |       0 |    0 |    9 |      0 |      0 |          0 |
+|             addr_arbiter_inst                               |                            Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_addr_arbiter_sasd |         60 |         60 |       0 |    0 |   28 |      0 |      0 |          0 |
+|             gen_decerr.decerr_slave_inst                    |                                 Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_decerr_slave |          9 |          9 |       0 |    0 |    4 |      0 |      0 |          0 |
+|             reg_slice_r                                     |                    Zynq_CPU_xbar_0_axi_register_slice_v2_1_26_axic_register_slice |         74 |         74 |       0 |    0 |   74 |      0 |      0 |          0 |
+|             splitter_ar                                     |                     Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_splitter__parameterized0 |          3 |          3 |       0 |    0 |    2 |      0 |      0 |          0 |
+|             splitter_aw                                     |                                     Zynq_CPU_xbar_0_axi_crossbar_v2_1_27_splitter |          7 |          7 |       0 |    0 |    3 |      0 |      0 |          0 |
+|     rst_ps7_0_100M                                          |                                                         Zynq_CPU_rst_ps7_0_100M_0 |         17 |         16 |       0 |    1 |   33 |      0 |      0 |          0 |
+|       U0                                                    |                                          Zynq_CPU_rst_ps7_0_100M_0_proc_sys_reset |         17 |         16 |       0 |    1 |   33 |      0 |      0 |          0 |
+|         (U0)                                                |                                          Zynq_CPU_rst_ps7_0_100M_0_proc_sys_reset |          0 |          0 |       0 |    0 |    1 |      0 |      0 |          0 |
+|         EXT_LPF                                             |                                                     Zynq_CPU_rst_ps7_0_100M_0_lpf |          5 |          4 |       0 |    1 |   17 |      0 |      0 |          0 |
+|           (EXT_LPF)                                         |                                                     Zynq_CPU_rst_ps7_0_100M_0_lpf |          2 |          1 |       0 |    1 |    9 |      0 |      0 |          0 |
+|           ACTIVE_LOW_AUX.ACT_LO_AUX                         |                                                Zynq_CPU_rst_ps7_0_100M_0_cdc_sync |          1 |          1 |       0 |    0 |    4 |      0 |      0 |          0 |
+|           ACTIVE_LOW_EXT.ACT_LO_EXT                         |                                              Zynq_CPU_rst_ps7_0_100M_0_cdc_sync_0 |          2 |          2 |       0 |    0 |    4 |      0 |      0 |          0 |
+|         SEQ                                                 |                                            Zynq_CPU_rst_ps7_0_100M_0_sequence_psr |         12 |         12 |       0 |    0 |   15 |      0 |      0 |          0 |
+|           (SEQ)                                             |                                            Zynq_CPU_rst_ps7_0_100M_0_sequence_psr |          7 |          7 |       0 |    0 |    9 |      0 |      0 |          0 |
+|           SEQ_COUNTER                                       |                                                 Zynq_CPU_rst_ps7_0_100M_0_upcnt_n |          5 |          5 |       0 |    0 |    6 |      0 |      0 |          0 |
+|     rtl_alu_0                                               |                                                              Zynq_CPU_rtl_alu_0_0 |       3098 |       3098 |       0 |    0 |  320 |      0 |      0 |          4 |
+|       inst                                                  |                                                 Zynq_CPU_rtl_alu_0_0_rtl_alu_v1_0 |       3098 |       3098 |       0 |    0 |  320 |      0 |      0 |          4 |
+|         rtl_alu_v1_0_S00_AXI_inst                           |                                         Zynq_CPU_rtl_alu_0_0_rtl_alu_v1_0_S00_AXI |       3098 |       3098 |       0 |    0 |  320 |      0 |      0 |          4 |
+|           (rtl_alu_v1_0_S00_AXI_inst)                       |                                         Zynq_CPU_rtl_alu_0_0_rtl_alu_v1_0_S00_AXI |        565 |        565 |       0 |    0 |  320 |      0 |      0 |          0 |
+|           core                                              |                                                      Zynq_CPU_rtl_alu_0_0_rtl_alu |       2533 |       2533 |       0 |    0 |    0 |      0 |      0 |          4 |
+|     rtl_multiplier_0                                        |                                                       Zynq_CPU_rtl_multiplier_0_0 |         49 |         49 |       0 |    0 |  138 |      0 |      0 |          1 |
+|       inst                                                  |                                   Zynq_CPU_rtl_multiplier_0_0_rtl_multiplier_v1_0 |         49 |         49 |       0 |    0 |  138 |      0 |      0 |          1 |
+|         rtl_multiplier_v1_0_S00_AXI_inst                    |                           Zynq_CPU_rtl_multiplier_0_0_rtl_multiplier_v1_0_S00_AXI |         49 |         49 |       0 |    0 |  138 |      0 |      0 |          1 |
+|           (rtl_multiplier_v1_0_S00_AXI_inst)                |                           Zynq_CPU_rtl_multiplier_0_0_rtl_multiplier_v1_0_S00_AXI |         49 |         49 |       0 |    0 |  138 |      0 |      0 |          0 |
+|           rtl_mult_instance_01                              |                                        Zynq_CPU_rtl_multiplier_0_0_rtl_multiplier |          0 |          0 |       0 |    0 |    0 |      0 |      0 |          1 |
++-------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

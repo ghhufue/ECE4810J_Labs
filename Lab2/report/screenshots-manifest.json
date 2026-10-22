@@ -1,0 +1,81 @@
+{
+  "captured_on": "2026-10-21",
+  "packaged_at": "2026-10-21T18:00:09.317986+08:00",
+  "pixel_editing": false,
+  "format": "JPEG (original screenshot bytes)",
+  "boot_sha256": "9f57c42b36ea5f82667ab36efd79304cbb6b2ceaaef4f7b6c0282296e1ca9d08",
+  "images": [
+    {
+      "file": "images/hls_alu_csimulation_pass.jpg",
+      "bytes": 239495,
+      "sha256": "803d66b3a17dfef52b791b55dcd0fc9b936360abadc6de77fdfd2619c0254e9e",
+      "purpose": "Section 2：C 仿真"
+    },
+    {
+      "file": "images/hls_alu_synthesis_summary.jpg",
+      "bytes": 279043,
+      "sha256": "f8a01cae217511803d05e673d0953b30cb787acd1794f63399990d6cb9ccdcb5",
+      "purpose": "Section 2：HLS 综合时序和资源"
+    },
+    {
+      "file": "images/hls_alu_cosimulation_pass.jpg",
+      "bytes": 228796,
+      "sha256": "effd254ab7aea6b3b46e0877601b7a21cf8d02cb0cf8ff1a24952f3899c5f9b1",
+      "purpose": "Section 2：C/RTL 协同仿真"
+    },
+    {
+      "file": "images/vivado_multipliers_highlighted.jpg",
+      "bytes": 323361,
+      "sha256": "cb4202ee21b6fe28ad14fe36dbdee0c9c70a5748b40e86085e93db79cc5b9460",
+      "purpose": "Section 2：乘法器实现图"
+    },
+    {
+      "file": "images/vivado_alus_highlighted.jpg",
+      "bytes": 254082,
+      "sha256": "7841c3af7192345893b699709713d669088731015fd1bb75b50871a857fdfbe1",
+      "purpose": "Section 5：流水线 ALU 实现图"
+    },
+    {
+      "file": "images/vivado_alus_highlighted_detail.jpg",
+      "bytes": 311213,
+      "sha256": "f6fb144e3d9885f0ae8c84966d9d15d9172915d71b98204b3960a469b15a9beb",
+      "purpose": "流水线 ALU 局部放大补充图"
+    },
+    {
+      "file": "images/vivado_utilization_summary.jpg",
+      "bytes": 179802,
+      "sha256": "fa3b03f50af244231743f578c8ce543a44dd36bf807e2e5f351fd742a200421e",
+      "purpose": "流水线版：资源汇总"
+    },
+    {
+      "file": "images/vivado_design_timing_summary.jpg",
+      "bytes": 165799,
+      "sha256": "eba041596bd269e3423a494586cb442e575380bb6a047f7cf8c161bfa3d32889",
+      "purpose": "流水线版：时序汇总"
+    },
+    {
+      "file": "images/vitis_alu_build_finished.jpg",
+      "bytes": 259372,
+      "sha256": "9ec164ba1e5266f3c4508ee7bb2f7ec037688b312a227092f736e059a8dd20cd",
+      "purpose": "Section 2：Vitis IDE 编译完成"
+    },
+    {
+      "file": "images/baseline_alus_highlighted.jpg",
+      "bytes": 249655,
+      "sha256": "1b1777c3f604a07fab771cefb0962a45c8dd33a2bf5b1a839bd2e4c79529447f",
+      "purpose": "Section 2：组合 ALU 实现图"
+    },
+    {
+      "file": "images/baseline_utilization_summary.jpg",
+      "bytes": 183661,
+      "sha256": "4f306ac6d905b7e1663978439fdec9d399808e0a55a5101d82d8a71d5d64b23c",
+      "purpose": "组合版：资源汇总"
+    },
+    {
+      "file": "images/baseline_design_timing_summary.jpg",
+      "bytes": 168339,
+      "sha256": "5e48f777862f083056e40bb4c18dadb361df70a26ccd26f307bea7934b2c80ec",
+      "purpose": "组合版：时序汇总"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+
+
+================================================================
+== Vitis HLS Report for 'hls_multiplier'
+================================================================
+* Date:           Wed Oct 21 16:36:13 2026
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        hls_multiplier
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.150 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        3|        3|  30.000 ns|  30.000 ns|    4|    4|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    1|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    -|     112|    168|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     25|    -|
+|Register         |        -|    -|       4|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    1|     116|    193|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   ~0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------+-------------+---------+----+-----+-----+-----+
+    |    Instance   |    Module   | BRAM_18K| DSP|  FF | LUT | URAM|
+    +---------------+-------------+---------+----+-----+-----+-----+
+    |CRTLS_s_axi_U  |CRTLS_s_axi  |        0|   0|  112|  168|    0|
+    +---------------+-------------+---------+----+-----+-----+-----+
+    |Total          |             |        0|   0|  112|  168|    0|
+    +---------------+-------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    +-----------------------------+--------------------------+-----------+
+    |           Instance          |          Module          | Expression|
+    +-----------------------------+--------------------------+-----------+
+    |mul_mul_16ns_16ns_32_4_1_U1  |mul_mul_16ns_16ns_32_4_1  |    i0 * i1|
+    +-----------------------------+--------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  25|          5|    1|          5|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  25|          5|    1|          5|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------+---+----+-----+-----------+
+    |    Name   | FF| LUT| Bits| Const Bits|
+    +-----------+---+----+-----+-----------+
+    |ap_CS_fsm  |  4|   0|    4|          0|
+    +-----------+---+----+-----+-----------+
+    |Total      |  4|   0|    4|          0|
+    +-----------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+----------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++---------------------+-----+-----+------------+----------------+--------------+
+|s_axi_CRTLS_AWVALID  |   in|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_AWREADY  |  out|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_AWADDR   |   in|    6|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_WVALID   |   in|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_WREADY   |  out|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_WDATA    |   in|   32|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_WSTRB    |   in|    4|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_ARVALID  |   in|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_ARREADY  |  out|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_ARADDR   |   in|    6|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_RVALID   |  out|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_RREADY   |   in|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_RDATA    |  out|   32|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_RRESP    |  out|    2|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_BVALID   |  out|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_BREADY   |   in|    1|       s_axi|           CRTLS|        scalar|
+|s_axi_CRTLS_BRESP    |  out|    2|       s_axi|           CRTLS|        scalar|
+|ap_clk               |   in|    1|  ap_ctrl_hs|  hls_multiplier|  return value|
+|ap_rst_n             |   in|    1|  ap_ctrl_hs|  hls_multiplier|  return value|
+|interrupt            |  out|    1|  ap_ctrl_hs|  hls_multiplier|  return value|
++---------------------+-----+-----+------------+----------------+--------------+
+

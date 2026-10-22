@@ -1,0 +1,26 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../../hls/test_hls_alu.cpp in debug mode
+   Compiling ../../../../../hls/hls_alu.cpp in debug mode
+   Generating csim.exe
+Operation  0: 417 tests
+Operation  1: 417 tests
+Operation  2: 417 tests
+Operation  3: 417 tests
+Operation  4: 417 tests
+Operation  5: 417 tests
+Operation  6: 417 tests
+Operation  7: 417 tests
+Operation  8: 417 tests
+Operation  9: 417 tests
+Operation 10: 417 tests
+Operation 11: 417 tests
+Operation 12: 417 tests
+Operation 13: 417 tests
+Operation 14: 417 tests
+Operation 15: 417 tests
+Operation 16: 417 tests
+Operation 17: 417 tests
+HLS_ALU_PASS: 7509 tests, 0 failures
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

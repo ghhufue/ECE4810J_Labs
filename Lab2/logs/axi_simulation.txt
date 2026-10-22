@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Oct 21 16:42:45 2026
+# Process ID: 8388
+# Current directory: D:/code/ECE4810J/Lab2/build/simulation
+# Command line: xsim.exe -log D:\code\ECE4810J\Lab2/logs/axi_simulation.txt -mode tcl -source {xsim.dir/axi_alu_sim/xsim_script.tcl}
+# Log file: D:/code/ECE4810J/Lab2/logs/axi_simulation.txt
+# Journal file: D:/code/ECE4810J/Lab2/build/simulation\xsim.jou
+# Running On: DESKTOP-8JOUGG5, OS: Windows, CPU Frequency: 3418 MHz, CPU Physical cores: 20, Host memory: 34122 MB
+#-----------------------------------------------------------
+source xsim.dir/axi_alu_sim/xsim_script.tcl
+# xsim {axi_alu_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+AXI_ALU_PASS: 7509 vectors; independent AW/W, B/R backpressure, byte strobes, access errors, busy rejection, reset PASS
+$finish called at time : 2679960 ns : File "D:/code/ECE4810J/Lab2/tests/tb_axi_alu.sv" Line 107
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:42:47 2026...
