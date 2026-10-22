@@ -1,0 +1,138 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2026.10.22 17:21:23 =~=~=~=~=~=~=~=~=~=~=~=
+
+ECE4810J Lab 2 | Arty Z7-20 | 100 MHz PL
+RTL/HLS multipliers + RTL pipelined/HLS RV32IM ALUs
+UART: 115200 8N1; SD boot image
+
+--- Multiplier self-test ---
+MULTIPLIER RESULT: 100 tests, 0 failures
+
+--- RV32IM ALU self-test (independent reference vectors) ---
+op 0 ADD: 417 tests, 0 failures (RTL + HLS)
+op 1 SUB: 417 tests, 0 failures (RTL + HLS)
+op 2 SLT: 417 tests, 0 failures (RTL + HLS)
+op 3 SLTU: 417 tests, 0 failures (RTL + HLS)
+op 4 AND: 417 tests, 0 failures (RTL + HLS)
+op 5 OR: 417 tests, 0 failures (RTL + HLS)
+op 6 XOR: 417 tests, 0 failures (RTL + HLS)
+op 7 SLL: 417 tests, 0 failures (RTL + HLS)
+op 8 SRL: 417 tests, 0 failures (RTL + HLS)
+op 9 SRA: 417 tests, 0 failures (RTL + HLS)
+op 10 MUL: 417 tests, 0 failures (RTL + HLS)
+op 11 MULH: 417 tests, 0 failures (RTL + HLS)
+op 12 MULHSU: 417 tests, 0 failures (RTL + HLS)
+op 13 MULHU: 417 tests, 0 failures (RTL + HLS)
+op 14 DIV: 417 tests, 0 failures (RTL + HLS)
+op 15 DIVU: 417 tests, 0 failures (RTL + HLS)
+op 16 REM: 417 tests, 0 failures (RTL + HLS)
+op 17 REMU: 417 tests, 0 failures (RTL + HLS)
+RTL ALU RESULT: 7509 tests, 0 failures
+HLS ALU RESULT: 7509 tests, 0 failures
+LAB2 SELF-TEST: PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> m
+Enter operand A (0..65535): 2
+Enter operand B (0..65535): 3
+2 * 3: RTL=0x00000006 HLS=0x00000006 expected=0x00000006 PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> m
+Enter operand A (0..65535): 65535
+Enter operand B (0..65535): 65535
+65535 * 65535: RTL=0xFFFE0001 HLS=0xFFFE0001 expected=0xFFFE0001 PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> m
+Enter operand A (0..65535): 2
+Enter operand B (0..65535): 3
+2 * 3: RTL=0x00000006 HLS=0x00000006 expected=0x00000006 PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> m
+Enter operand A (0..65535): 6552 35
+Enter operand B (0..65535): 65535
+65535 * 65535: RTL=0xFFFE0001 HLS=0xFFFE0001 expected=0xFFFE0001 PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 10
+Operand A (decimal or 0xhex): -20
+Operand B (decimal or 0xhex): 5
+MUL A=0xFFFFFFEC B=0x00000005 RTL=0xFFFFFF9C HLS=0xFFFFFF9C MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 14
+Operand A (decimal or 0xhex): -20
+Operand B (decimal or 0xhex): 3
+DIV A=0xFFFFFFEC B=0x00000003 RTL=0xFFFFFFFA HLS=0xFFFFFFFA MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 16
+Operand A (decimal or 0xhex): -20
+Operand B (decimal or 0xhex): 3
+REM A=0xFFFFFFEC B=0x00000003 RTL=0xFFFFFFFE HLS=0xFFFFFFFE MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 14
+Operand A (decimal or 0xhex): 123
+Operand B (decimal or 0xhex): 0
+DIV A=0x0000007B B=0x00000000 RTL=0xFFFFFFFF HLS=0xFFFFFFFF MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 16
+Operand A (decimal or 0xhex): 123
+Operand B (decimal or 0xhex): 0
+REM A=0x0000007B B=0x00000000 RTL=0x0000007B HLS=0x0000007B MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> a
+0=ADD 1=SUB 2=SLT 3=SLTU 4=AND 5=OR 6=XOR 7=SLL 8=SRL 9=SRA 10=MUL 11=MULH 12=MULHSU 13=MULHU 14=DIV 15=DIVU 16=REM 17=REMU 
+Operation (0..17): 14
+Operand A (decimal or 0xhex): 0x80000000
+Operand B (decimal or 0xhex): -1
+DIV A=0x80000000 B=0xFFFFFFFF RTL=0x80000000 HLS=0x80000000 MATCH
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> 
+ECE4810J Lab 2 | Arty Z7-20 | 100 MHz PL
+RTL/HLS multipliers + RTL pipelined/HLS RV32IM ALUs
+UART: 115200 8N1; SD boot image
+
+--- Multiplier self-test ---
+MULTIPLIER RESULT: 100 tests, 0 failures
+
+--- RV32IM ALU self-test (independent reference vectors) ---
+op 0 ADD: 417 tests, 0 failures (RTL + HLS)
+op 1 SUB: 417 tests, 0 failures (RTL + HLS)
+op 2 SLT: 417 tests, 0 failures (RTL + HLS)
+op 3 SLTU: 417 tests, 0 failures (RTL + HLS)
+op 4 AND: 417 tests, 0 failures (RTL + HLS)
+op 5 OR: 417 tests, 0 failures (RTL + HLS)
+op 6 XOR: 417 tests, 0 failures (RTL + HLS)
+op 7 SLL: 417 tests, 0 failures (RTL + HLS)
+op 8 SRL: 417 tests, 0 failures (RTL + HLS)
+op 9 SRA: 417 tests, 0 failures (RTL + HLS)
+op 10 MUL: 417 tests, 0 failures (RTL + HLS)
+op 11 MULH: 417 tests, 0 failures (RTL + HLS)
+op 12 MULHSU: 417 tests, 0 failures (RTL + HLS)
+op 13 MULHU: 417 tests, 0 failures (RTL + HLS)
+op 14 DIV: 417 tests, 0 failures (RTL + HLS)
+op 15 DIVU: 417 tests, 0 failures (RTL + HLS)
+op 16 REM: 417 tests, 0 failures (RTL + HLS)
+op 17 REMU: 417 tests, 0 failures (RTL + HLS)
+RTL ALU RESULT: 7509 tests, 0 failures
+HLS ALU RESULT: 7509 tests, 0 failures
+LAB2 SELF-TEST: PASS
+
+Menu: t = self-test, m = 16-bit multiply, a = 32-bit ALU
+> 
