@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="hello_hls_rtl_alu" location="D:/code/ECE4810J/Lab2/vitis_workspace/hello_hls_rtl_alu" platform="D:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/lab2_platform.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" systemProject="hello_hls_rtl_alu_system" sysConfig="lab2_platform" runtime="C/C++" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="41b8c75a6280c384aa9eef350b49b3ad">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.911343363">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.372695756" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

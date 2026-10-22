@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# xsim v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Oct 21 16:37:32 2026
+# Process ID: 28584
+# Current directory: D:/code/ECE4810J/Lab2/build/simulation
+# Command line: xsim.exe -log D:\code\ECE4810J\Lab2/logs/rtl_simulation.txt -mode tcl -source {xsim.dir/alu_sim/xsim_script.tcl}
+# Log file: D:/code/ECE4810J/Lab2/logs/rtl_simulation.txt
+# Journal file: D:/code/ECE4810J/Lab2/build/simulation\xsim.jou
+# Running On: DESKTOP-8JOUGG5, OS: Windows, CPU Frequency: 3418 MHz, CPU Physical cores: 20, Host memory: 34122 MB
+#-----------------------------------------------------------
+source xsim.dir/alu_sim/xsim_script.tcl
+# xsim {alu_sim} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+RTL_ALU_PASS: 7509 baseline + 7509 pipeline vectors; reset cancellation PASS
+$finish called at time : 717840 ns : File "D:/code/ECE4810J/Lab2/tests/tb_alu.sv" Line 47
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Oct 21 16:37:33 2026...

@@ -1,0 +1,13 @@
+# Rebuildable HLS and simulation intermediates; source/test vectors live elsewhere.
+/build/
+/vitis_workspace/.analytics/
+/vitis_workspace/IDE.log
+/vitis_workspace/**/.analytics/
+/vitis_workspace/**/.settings/
+/vitis_workspace/**/build/
+
+# Final deliverables are versioned; intermediate build outputs remain ignored.
+!/boot/BOOT.BIN
+!/exported/lab2.xsa
+!/release/
+!/release/lab2-test-guide.md

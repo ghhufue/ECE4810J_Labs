@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='ASCII'?>
+<systemproject:SystemProject xmlns:systemproject="http://www.xilinx.com/systemproject" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmi:version="2.0" name="hello_hls_rtl_alu_system" platform="D:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/lab2_platform.xpfm" platformUID="xilinx:arty-z7-20::0.0(custom)" sysConfig="lab2_platform" runtime="C/C++" xmlns:sdsproject="http://www.xilinx.com/sdsproject">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.162250241">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0" />
+    <applications name="hello_hls_rtl_alu" domainName="standalone_ps7_cortexa9_0" domainPrettyName="standalone_ps7_cortexa9_0" appBuildConfig="Debug" /></configBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.901532834">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0" />
+    <applications name="hello_hls_rtl_alu" domainName="standalone_ps7_cortexa9_0" domainPrettyName="standalone_ps7_cortexa9_0" appBuildConfig="Debug" /></configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>

@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+    [bootloader] D:/code/ECE4810J/Lab2/vitis_workspace/lab2_platform/export/lab2_platform/sw/lab2_platform/boot/fsbl.elf
+    D:/code/ECE4810J/Lab2/vivado/lab2/lab2.runs/impl_1/Zynq_CPU_wrapper.bit
+    D:/code/ECE4810J/Lab2/vitis_workspace/hello_hls_rtl_alu/Debug/hello_hls_rtl_alu.elf
+}

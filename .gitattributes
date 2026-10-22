@@ -1,1 +1,4 @@
 *.pdf binary
+*.bin binary
+*.BIN binary
+*.xsa binary

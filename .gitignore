@@ -67,3 +67,7 @@ Desktop.ini
 # 8. Python cache (if used)
 __pycache__/
 *.pyc
+
+# Local preview output and editor cache
+/tmp/
+/.vscode/cache.json

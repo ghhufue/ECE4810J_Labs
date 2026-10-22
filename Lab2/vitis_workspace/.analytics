@@ -1,0 +1,7 @@
+timestamp=[2026-10-21 16:43:20], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.587, duration_ms=587, data={}
+timestamp=[2026-10-21 16:48:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.465, duration_ms=465, data={}
+timestamp=[2026-10-21 17:30:42], mode=WORKBENCH_START, duration=0:00:04.056, duration_ms=4056, data={}
+timestamp=[2026-10-21 17:30:43], mode=WORKBENCH_UI_INIT, duration=0:00:00.383, duration_ms=383, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-10-21 17:30:47], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.500, duration_ms=500, data={}
+timestamp=[2026-10-21 17:47:00], mode=BUILD, duration=0:00:00.261, duration_ms=261, data={name=hello_hls_rtl_alu, configuration=Debug, clean_build=true}
+timestamp=[2026-10-21 17:47:03], mode=BUILD, duration=0:00:01.156, duration_ms=1156, data={name=hello_hls_rtl_alu, configuration=Debug, clean_build=false}
