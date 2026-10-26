@@ -1,0 +1,55 @@
+{
+  "release_url": "https://github.com/ghhufue/ECE4810J_Labs/releases/tag/lab3-v0.1-hwtest",
+  "tag": "lab3-v0.1-hwtest",
+  "published": true,
+  "prerelease": true,
+  "published_at_shanghai": "2026-10-26 13:09:09 +08:00",
+  "verification": "All 11 assets downloaded from GitHub and matched byte-for-byte to the uploaded local files; SHA256SUMS verified",
+  "hardware_execution": "Pending; board unavailable",
+  "assets": {
+    "BOOT.BIN": {
+      "bytes": 4313672,
+      "sha256": "d8bbb6ef334717ea2141ec69f2e2cce13124493679193fa3f81ceb271b566f44"
+    },
+    "BOOT.sha256": {
+      "bytes": 76,
+      "sha256": "a3c02d1068749dece0894397693bdd8b41db280bb95741a32c3c8019dd33a408"
+    },
+    "manifest.json": {
+      "bytes": 824,
+      "sha256": "9be59a9157eb710211d033f279f148fa2eae1dd7628e7ece89ea789079e59de3"
+    },
+    "lab3-usage.md": {
+      "bytes": 2687,
+      "sha256": "20746f5a9b6c1a1c5eaa3aa75f9991af92ed85baa8f7faf3050cf5714e8c7825"
+    },
+    "lab3-test-guide.md": {
+      "bytes": 16496,
+      "sha256": "5073d70160db24461f4a54bf3eb40d0788a50a4b16deb854ac87d3f36f9771e8"
+    },
+    "BOARD_TEST_RECORD.md": {
+      "bytes": 1186,
+      "sha256": "72cc863a324ec091e9ff8b8ab3c0cbc985f4de838c982d95cb66c695f1944d9b"
+    },
+    "lab3_arty_sd_test.zip": {
+      "bytes": 213445,
+      "sha256": "2043a586fa8faadedc0e5f49adf58aec320e04b40ded0bd63d21ae143d6afe6c"
+    },
+    "lab3_board_test_tools.zip": {
+      "bytes": 3568,
+      "sha256": "2d609f30cb40c667fb36a534d467d9b361055252fa9e9b3f87743ee64d5c8662"
+    },
+    "lab3_pynq_test.zip": {
+      "bytes": 108863,
+      "sha256": "7bf5a8019cf3944e2e5411f14661e6900c3616a5749b2dbb72953fa78bd48989"
+    },
+    "release-info.json": {
+      "bytes": 513,
+      "sha256": "eb9f8a080dd13b863c3cecdd229dd6cff71cec448163f397473a8866206d9c41"
+    },
+    "SHA256SUMS": {
+      "bytes": 844,
+      "sha256": "68a79e72fa2d7511b74cf0e69b2e0b64ab85721c1462c59e600fb6c325710701"
+    }
+  }
+}

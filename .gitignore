@@ -71,3 +71,4 @@ __pycache__/
 # Local preview output and editor cache
 /tmp/
 /.vscode/cache.json
+/xsim.dir/

@@ -1,0 +1,4 @@
+DCT/IDCT: 323 blocks, 41344 checked values, 0 failures
+YUV: 4413096 channel values, 0 failures
+FIR supplied golden: 600 samples, 0 failures
+Full image C DCT/IDCT: 4096 blocks, exact match to NumPy model, MSE=0.57511902, PSNR=50.53323 dB

@@ -1,0 +1,160 @@
+{
+  "yuv": {
+    "baseline_no_tripcount": {
+      "clock_ns": 6.651,
+      "latency_min": "undef",
+      "latency_max": "undef",
+      "interval_max": "undef",
+      "BRAM_18K": 768,
+      "DSP": 7,
+      "FF": 536,
+      "LUT": 1247
+    },
+    "solution1": {
+      "clock_ns": 6.651,
+      "latency_min": 721205,
+      "latency_max": 4721669,
+      "interval_max": 4721670,
+      "BRAM_18K": 768,
+      "DSP": 7,
+      "FF": 536,
+      "LUT": 1247
+    },
+    "solution2": {
+      "clock_ns": 6.899,
+      "latency_min": 120041,
+      "latency_max": 786473,
+      "interval_max": 786474,
+      "BRAM_18K": 768,
+      "DSP": 10,
+      "FF": 1067,
+      "LUT": 1769
+    },
+    "solution3_fifo": {
+      "clock_ns": 7.268,
+      "latency_min": 40022,
+      "latency_max": 262166,
+      "interval_max": 262158,
+      "BRAM_18K": 0,
+      "DSP": 10,
+      "FF": 2212,
+      "LUT": 2725
+    },
+    "solution3_pipo": {
+      "clock_ns": 6.899,
+      "latency_min": 120038,
+      "latency_max": 786470,
+      "interval_max": 262158,
+      "BRAM_18K": 1536,
+      "DSP": 10,
+      "FF": 1892,
+      "LUT": 2371
+    }
+  },
+  "dct": {
+    "solution1": {
+      "clock_ns": 6.508,
+      "latency_min": 2450,
+      "latency_max": 2450,
+      "interval_max": 2451,
+      "BRAM_18K": 5,
+      "DSP": 2,
+      "FF": 515,
+      "LUT": 1493
+    },
+    "solution2": {
+      "clock_ns": 6.508,
+      "latency_min": 422,
+      "latency_max": 422,
+      "interval_max": 423,
+      "BRAM_18K": 17,
+      "DSP": 16,
+      "FF": 929,
+      "LUT": 2012
+    },
+    "solution3": {
+      "clock_ns": 6.746,
+      "latency_min": 360,
+      "latency_max": 360,
+      "interval_max": 361,
+      "BRAM_18K": 3,
+      "DSP": 96,
+      "FF": 2505,
+      "LUT": 4030
+    },
+    "solution4": {
+      "clock_ns": 6.746,
+      "latency_min": 358,
+      "latency_max": 358,
+      "interval_max": 224,
+      "BRAM_18K": 3,
+      "DSP": 96,
+      "FF": 2508,
+      "LUT": 3825
+    },
+    "solution5": {
+      "clock_ns": 6.746,
+      "latency_min": 354,
+      "latency_max": 354,
+      "interval_max": 68,
+      "BRAM_18K": 5,
+      "DSP": 96,
+      "FF": 2503,
+      "LUT": 3500
+    }
+  },
+  "fir": {
+    "baseline": {
+      "clock_ns": 6.912,
+      "latency_min": 636,
+      "latency_max": 636,
+      "interval_max": 637,
+      "BRAM_18K": 2,
+      "DSP": 1,
+      "FF": 313,
+      "LUT": 266
+    },
+    "pipeline": {
+      "clock_ns": 6.912,
+      "latency_min": 134,
+      "latency_max": 134,
+      "interval_max": 135,
+      "BRAM_18K": 2,
+      "DSP": 1,
+      "FF": 385,
+      "LUT": 332
+    }
+  },
+  "yuv_baseline_functions": {
+    "yuv_filter": {
+      "clock_ns": 6.651,
+      "latency_min": 721205,
+      "latency_max": 4721669,
+      "interval_max": 4721670,
+      "BRAM_18K": 768,
+      "DSP": 7,
+      "FF": 536,
+      "LUT": 1247
+    },
+    "rgb2yuv_1": {
+      "clock_ns": 6.27,
+      "latency_min": 240401,
+      "latency_max": 1573889,
+      "interval_max": 1573889,
+      "BRAM_18K": 0,
+      "DSP": 3,
+      "FF": 180,
+      "LUT": 449
+    },
+    "yuv2rgb_1": {
+      "clock_ns": 6.651,
+      "latency_min": 320401,
+      "latency_max": 2098177,
+      "interval_max": 2098177,
+      "BRAM_18K": 0,
+      "DSP": 4,
+      "FF": 151,
+      "LUT": 317
+    }
+  }
+}

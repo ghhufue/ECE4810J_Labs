@@ -1,0 +1,12 @@
+/build/
+/vitis_workspace/
+/vivado/
+/docs/*.png
+/docs/*.txt
+/report/pdf_preview/
+/release/
+/NA/
+**/.ipynb_checkpoints/
+
+# Preserve copied synthesis and cosimulation evidence outside build workspaces.
+!logs/**/*.rpt

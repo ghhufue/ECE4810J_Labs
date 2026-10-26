@@ -1,0 +1,209 @@
+
+
+================================================================
+== Synthesis Summary Report of 'yuv_filter'
+================================================================
++ General Information: 
+    * Date:           Mon Oct 26 12:40:36 2026
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        yuv.prj
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------+------+------+---------+-----------+----------+---------+------+----------+------------+--------+-----------+-----------+-----+
+    |        Modules       | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |            |        |           |           |     |
+    |        & Loops       | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|    BRAM    |   DSP  |     FF    |    LUT    | URAM|
+    +----------------------+------+------+---------+-----------+----------+---------+------+----------+------------+--------+-----------+-----------+-----+
+    |+ yuv_filter          |     -|  0.65|  4721669|  4.722e+07|         -|  4721670|     -|        no|  768 (274%)|  7 (3%)|  536 (~0%)|  1247 (2%)|    -|
+    | + rgb2yuv_1          |     -|  1.03|  1573889|  1.574e+07|         -|  1573889|     -|        no|           -|  3 (1%)|  180 (~0%)|  449 (~0%)|    -|
+    |  o RGB2YUV_LOOP_X    |     -|  7.30|  1573888|  1.574e+07|      3074|        -|   512|        no|           -|       -|          -|          -|    -|
+    |   o RGB2YUV_LOOP_Y   |     -|  7.30|     3072|  3.072e+04|         6|        -|   512|        no|           -|       -|          -|          -|    -|
+    | + yuv2rgb_1          |     -|  0.65|  2098177|  2.098e+07|         -|  2098177|     -|        no|           -|  4 (1%)|  151 (~0%)|  317 (~0%)|    -|
+    |  o YUV2RGB_LOOP_X    |     -|  7.30|  2098176|  2.098e+07|      4098|        -|   512|        no|           -|       -|          -|          -|    -|
+    |   o YUV2RGB_LOOP_Y   |     -|  7.30|     4096|  4.096e+04|         8|        -|   512|        no|           -|       -|          -|          -|    -|
+    | o YUV_SCALE_LOOP_X   |     -|  7.30|  1049600|  1.050e+07|      2050|        -|   512|        no|           -|       -|          -|          -|    -|
+    |  o YUV_SCALE_LOOP_Y  |     -|  7.30|     2048|  2.048e+04|         4|        -|   512|        no|           -|       -|          -|          -|    -|
+    +----------------------+------+------+---------+-----------+----------+---------+------+----------+------------+--------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_MEMORY
++---------------------------+----------+
+| Interface                 | Bitwidth |
++---------------------------+----------+
+| in_channels_ch1_address0  | 18       |
+| in_channels_ch1_q0        | 8        |
+| in_channels_ch2_address0  | 18       |
+| in_channels_ch2_q0        | 8        |
+| in_channels_ch3_address0  | 18       |
+| in_channels_ch3_q0        | 8        |
+| out_channels_ch1_address0 | 18       |
+| out_channels_ch1_d0       | 8        |
+| out_channels_ch2_address0 | 18       |
+| out_channels_ch2_d0       | 8        |
+| out_channels_ch3_address0 | 18       |
+| out_channels_ch3_d0       | 8        |
++---------------------------+----------+
+
+* REGISTER
++------------+---------+----------+
+| Interface  | Mode    | Bitwidth |
++------------+---------+----------+
+| U_scale    | ap_none | 8        |
+| V_scale    | ap_none | 8        |
+| Y_scale    | ap_none | 8        |
+| in_height  | ap_none | 16       |
+| in_width   | ap_none | 16       |
+| out_height | ap_none | 16       |
+| out_width  | ap_none | 16       |
++------------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| in       | in        | pointer       |
+| out      | out       | pointer       |
+| Y_scale  | in        | unsigned char |
+| U_scale  | in        | unsigned char |
+| V_scale  | in        | unsigned char |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------------------+---------+----------+
+| Argument | HW Interface              | HW Type | HW Usage |
++----------+---------------------------+---------+----------+
+| in       | in_channels_ch1_address0  | port    | offset   |
+| in       | in_channels_ch1_ce0       | port    |          |
+| in       | in_channels_ch1_q0        | port    |          |
+| in       | in_channels_ch2_address0  | port    | offset   |
+| in       | in_channels_ch2_ce0       | port    |          |
+| in       | in_channels_ch2_q0        | port    |          |
+| in       | in_channels_ch3_address0  | port    | offset   |
+| in       | in_channels_ch3_ce0       | port    |          |
+| in       | in_channels_ch3_q0        | port    |          |
+| in       | in_width                  | port    |          |
+| in       | in_height                 | port    |          |
+| out      | out_channels_ch1_address0 | port    | offset   |
+| out      | out_channels_ch1_ce0      | port    |          |
+| out      | out_channels_ch1_we0      | port    |          |
+| out      | out_channels_ch1_d0       | port    |          |
+| out      | out_channels_ch2_address0 | port    | offset   |
+| out      | out_channels_ch2_ce0      | port    |          |
+| out      | out_channels_ch2_we0      | port    |          |
+| out      | out_channels_ch2_d0       | port    |          |
+| out      | out_channels_ch3_address0 | port    | offset   |
+| out      | out_channels_ch3_ce0      | port    |          |
+| out      | out_channels_ch3_we0      | port    |          |
+| out      | out_channels_ch3_d0       | port    |          |
+| out      | out_width                 | port    |          |
+| out      | out_width_ap_vld          | port    |          |
+| out      | out_height                | port    |          |
+| out      | out_height_ap_vld         | port    |          |
+| Y_scale  | Y_scale                   | port    |          |
+| U_scale  | U_scale                   | port    |          |
+| V_scale  | V_scale                   | port    |          |
++----------+---------------------------+---------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                                | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++-------------------------------------+-----+--------+-------------+-----+--------+---------+
+| + yuv_filter                        | 7   |        |             |     |        |         |
+|   x_2_fu_315_p2                     | -   |        | x_2         | add | fabric | 0       |
+|   y_1_fu_334_p2                     | -   |        | y_1         | add | fabric | 0       |
+|   add_ln135_fu_344_p2               | -   |        | add_ln135   | add | fabric | 0       |
+|   mul_8ns_8ns_15_1_1_U33            | -   |        | mul_ln138   | mul | auto   | 0       |
+|   mul_8ns_8ns_15_1_1_U34            | -   |        | mul_ln139   | mul | auto   | 0       |
+|   mul_8ns_8ns_15_1_1_U35            | -   |        | mul_ln140   | mul | auto   | 0       |
+|  + rgb2yuv_1                        | 3   |        |             |     |        |         |
+|    x_6_fu_220_p2                    | -   |        | x_6         | add | fabric | 0       |
+|    y_fu_249_p2                      | -   |        | y           | add | fabric | 0       |
+|    add_ln57_fu_259_p2               | -   |        | add_ln57    | add | fabric | 0       |
+|    mac_muladd_8ns_5ns_9ns_13_4_1_U2 | 1   |        | mul_ln60    | mul | dsp48  | 3       |
+|    add_ln60_fu_431_p2               | -   |        | add_ln60    | add | fabric | 0       |
+|    add_ln60_3_fu_290_p2             | -   |        | add_ln60_3  | add | fabric | 0       |
+|    mac_muladd_8ns_5ns_9ns_13_4_1_U2 | 1   |        | add_ln60_4  | add | dsp48  | 3       |
+|    out_channels_ch1_d0              | -   |        | Y           | add | fabric | 0       |
+|    mac_muladd_8ns_7s_16s_16_4_1_U3  | 1   |        | mul_ln61    | mul | dsp48  | 3       |
+|    mul_8ns_8s_16_1_1_U1             | -   |        | mul_ln61_1  | mul | auto   | 0       |
+|    sub_ln61_fu_331_p2               | -   |        | sub_ln61    | sub | fabric | 0       |
+|    mac_muladd_8ns_7s_16s_16_4_1_U3  | 1   |        | add_ln61    | add | dsp48  | 3       |
+|    grp_fu_536_p2                    | -   |        | sub_ln62    | sub | fabric | 0       |
+|    mac_muladd_8ns_8s_16ns_16_4_1_U4 | 1   |        | mul_ln62    | mul | dsp48  | 3       |
+|    sub_ln62_1_fu_365_p2             | -   |        | sub_ln62_1  | sub | fabric | 0       |
+|    mac_muladd_8ns_8s_16ns_16_4_1_U4 | 1   |        | add_ln62    | add | dsp48  | 3       |
+|    add_ln62_2_fu_485_p2             | -   |        | add_ln62_2  | add | fabric | 0       |
+|  + yuv2rgb_1                        | 4   |        |             |     |        |         |
+|    x_4_fu_228_p2                    | -   |        | x_4         | add | fabric | 0       |
+|    y_2_fu_257_p2                    | -   |        | y_2         | add | fabric | 0       |
+|    add_ln95_fu_267_p2               | -   |        | add_ln95    | add | fabric | 0       |
+|    C_fu_285_p2                      | -   |        | C           | add | fabric | 0       |
+|    mac_muladd_9s_9ns_8ns_18_4_1_U17 | 1   |        | mul_ln101   | mul | dsp48  | 3       |
+|    mac_muladd_8s_9ns_18s_18_4_1_U18 | 1   |        | mul_ln101_1 | mul | dsp48  | 3       |
+|    mac_muladd_9s_9ns_8ns_18_4_1_U17 | 1   |        | add_ln101   | add | dsp48  | 3       |
+|    mac_muladd_8s_9ns_18s_18_4_1_U18 | 1   |        | add_ln101_1 | add | dsp48  | 3       |
+|    mac_muladd_8s_8s_18s_18_4_1_U20  | 1   |        | mul_ln102   | mul | dsp48  | 3       |
+|    mac_muladd_8s_9s_18s_18_4_1_U19  | 1   |        | mul_ln102_1 | mul | dsp48  | 3       |
+|    mac_muladd_8s_9s_18s_18_4_1_U19  | 1   |        | add_ln102   | add | dsp48  | 3       |
+|    mac_muladd_8s_8s_18s_18_4_1_U20  | 1   |        | add_ln102_1 | add | dsp48  | 3       |
+|    add_ln103_1_fu_394_p2            | -   |        | add_ln103_1 | add | fabric | 0       |
+|    add_ln103_fu_403_p2              | -   |        | add_ln103   | add | fabric | 0       |
++-------------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------+------+------+--------+----------------------+---------+------+---------+
+| Name                     | BRAM | URAM | Pragma | Variable             | Storage | Impl | Latency |
++--------------------------+------+------+--------+----------------------+---------+------+---------+
+| + yuv_filter             | 768  | 0    |        |                      |         |      |         |
+|   p_yuv_channels_ch1_U   | 128  | -    |        | p_yuv_channels_ch1   | ram_1p  | auto | 1       |
+|   p_yuv_channels_ch2_U   | 128  | -    |        | p_yuv_channels_ch2   | ram_1p  | auto | 1       |
+|   p_yuv_channels_ch3_U   | 128  | -    |        | p_yuv_channels_ch3   | ram_1p  | auto | 1       |
+|   p_scale_channels_ch1_U | 128  | -    |        | p_scale_channels_ch1 | ram_1p  | auto | 1       |
+|   p_scale_channels_ch2_U | 128  | -    |        | p_scale_channels_ch2 | ram_1p  | auto | 1       |
+|   p_scale_channels_ch3_U | 128  | -    |        | p_scale_channels_ch3 | ram_1p  | auto | 1       |
++--------------------------+------+------+--------+----------------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+-----------------+------------------------------------------+
+| Type           | Options         | Location                                 |
++----------------+-----------------+------------------------------------------+
+| loop_tripcount | min=200 max=512 | ../scripts/build_hls.tcl:25 in rgb2yuv   |
+| pipeline       | off             | ../scripts/build_hls.tcl:25 in rgb2yuv   |
+| loop_tripcount | min=200 max=512 | ../scripts/build_hls.tcl:25 in yuv2rgb   |
+| pipeline       | off             | ../scripts/build_hls.tcl:25 in yuv2rgb   |
+| loop_tripcount | min=200 max=512 | ../scripts/build_hls.tcl:25 in yuv_scale |
+| pipeline       | off             | ../scripts/build_hls.tcl:25 in yuv_scale |
++----------------+-----------------+------------------------------------------+
+
+

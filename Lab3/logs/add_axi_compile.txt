@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/code/ECE4810J/Lab3/build/add/solution1/syn/verilog/add.v" into library work
+INFO: [VRFC 10-311] analyzing module add
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/code/ECE4810J/Lab3/build/add/solution1/syn/verilog/add_CTRL_s_axi.v" into library work
+INFO: [VRFC 10-311] analyzing module add_CTRL_s_axi
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/code/ECE4810J/Lab3/tests/test_add_axi.v" into library work
+INFO: [VRFC 10-311] analyzing module test_add_axi

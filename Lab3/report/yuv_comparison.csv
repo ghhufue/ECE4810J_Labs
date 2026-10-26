@@ -1,0 +1,6 @@
+solution,clock_ns,latency_min,latency_max,interval_max,BRAM_18K,DSP,FF,LUT
+baseline_no_tripcount,6.651,undef,undef,undef,768,7,536,1247
+solution1,6.651,721205,4721669,4721670,768,7,536,1247
+solution2,6.899,120041,786473,786474,768,10,1067,1769
+solution3_fifo,7.268,40022,262166,262158,0,10,2212,2725
+solution3_pipo,6.899,120038,786470,262158,1536,10,1892,2371

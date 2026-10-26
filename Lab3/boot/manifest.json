@@ -1,0 +1,17 @@
+{
+  "board": "Arty Z7-20",
+  "part": "xc7z020clg400-1",
+  "tools": "Vivado/Vitis 2022.1",
+  "image": {
+    "path": "boot/BOOT.BIN",
+    "bytes": 4313672,
+    "sha256": "d8bbb6ef334717ea2141ec69f2e2cce13124493679193fa3f81ceb271b566f44"
+  },
+  "inputs": {
+    "vitis_workspace/lab3_platform/export/lab3_platform/sw/lab3_platform/boot/fsbl.elf": "a22d23bb9bf3796806506a4270612858cf9beced42720a2d0ff8cab17c7f10cd",
+    "vivado/lab3/lab3.runs/impl_1/Zynq_CPU_wrapper.bit": "620d5e9b3f834b2b49628c373d175a6040578efe4dd94c67d68bdd9bafe301f9",
+    "vitis_workspace/lab3_app/Debug/lab3_app.elf": "587e009940bcef886335c52d281896dcf0a73550618445e400c347096f4edcc7",
+    "exported/lab3.xsa": "4aecac69416fddf8509a38c31c4003edc4dc06b4ebd2f789546deb9c3e7d4696"
+  },
+  "hardware_execution": "Pending; board unavailable"
+}

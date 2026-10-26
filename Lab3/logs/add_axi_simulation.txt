@@ -1,0 +1,14 @@
+
+****** xsim v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/lab3_add_test/xsim_script.tcl
+# xsim {lab3_add_test} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+LAB3_ADD_AXI_PASS: 36 vectors, separated AW/W
+$finish called at time : 4010 ns : File "D:/code/ECE4810J/Lab3/tests/test_add_axi.v" Line 52
+xsim% INFO: [Common 17-206] Exiting xsim at Mon Oct 26 12:55:30 2026...

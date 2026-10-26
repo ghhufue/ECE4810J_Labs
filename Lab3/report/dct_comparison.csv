@@ -1,0 +1,6 @@
+solution,clock_ns,latency_min,latency_max,interval_max,BRAM_18K,DSP,FF,LUT
+solution1,6.508,2450,2450,2451,5,2,515,1493
+solution2,6.508,422,422,423,17,16,929,2012
+solution3,6.746,360,360,361,3,96,2505,4030
+solution4,6.746,358,358,224,3,96,2508,3825
+solution5,6.746,354,354,68,5,96,2503,3500

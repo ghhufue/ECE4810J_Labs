@@ -1,0 +1,183 @@
+
+
+================================================================
+== Vitis HLS Report for 'rgb2yuv_1'
+================================================================
+* Date:           Mon Oct 26 12:40:55 2026
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        yuv.prj
+* Solution:       solution3_fifo (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.899 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |   max  |   Type  |
+    +---------+---------+----------+----------+-------+--------+---------+
+    |    40013|   262157|  0.400 ms|  2.622 ms|  40013|  262157|       no|
+    +---------+---------+----------+----------+-------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------+--------------------------------------------------+---------+---------+----------+----------+-------+--------+---------+
+        |                                                            |                                                  |  Latency (cycles) |  Latency (absolute) |    Interval    | Pipeline|
+        |                          Instance                          |                      Module                      |   min   |   max   |    min   |    max   |  min  |   max  |   Type  |
+        +------------------------------------------------------------+--------------------------------------------------+---------+---------+----------+----------+-------+--------+---------+
+        |grp_rgb2yuv_1_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y_fu_72  |rgb2yuv_1_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y  |    40008|   262152|  0.400 ms|  2.622 ms|  40008|  262152|       no|
+        +------------------------------------------------------------+--------------------------------------------------+---------+---------+----------+----------+-------+--------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    1|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    4|     391|    574|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     91|    -|
+|Register         |        -|    -|      40|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    5|     431|    667|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    2|      ~0|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------+--------------------------------------------------+---------+----+-----+-----+-----+
+    |                          Instance                          |                      Module                      | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------------------------------------------------+--------------------------------------------------+---------+----+-----+-----+-----+
+    |grp_rgb2yuv_1_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y_fu_72  |rgb2yuv_1_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y  |        0|   4|  391|  574|    0|
+    +------------------------------------------------------------+--------------------------------------------------+---------+----+-----+-----+-----+
+    |Total                                                       |                                                  |        0|   4|  391|  574|    0|
+    +------------------------------------------------------------+--------------------------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    +------------------------------+--------------------------+-----------+
+    |           Instance           |          Module          | Expression|
+    +------------------------------+--------------------------+-----------+
+    |mul_mul_16ns_16ns_32_4_1_U23  |mul_mul_16ns_16ns_32_4_1  |    i0 * i1|
+    +------------------------------+--------------------------+-----------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+----+-----------+-----+-----------+
+    |          Name          | LUT| Input Size| Bits| Total Bits|
+    +------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm               |  37|          7|    1|          7|
+    |ap_done                 |   9|          2|    1|          2|
+    |out_channels_ch1_write  |   9|          2|    1|          2|
+    |out_channels_ch2_write  |   9|          2|    1|          2|
+    |out_channels_ch3_write  |   9|          2|    1|          2|
+    |out_height_blk_n        |   9|          2|    1|          2|
+    |out_width_blk_n         |   9|          2|    1|          2|
+    +------------------------+----+-----------+-----+-----------+
+    |Total                   |  91|         19|    7|         19|
+    +------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                   Name                                  | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                                |   6|   0|    6|          0|
+    |ap_done_reg                                                              |   1|   0|    1|          0|
+    |bound_reg_119                                                            |  32|   0|   32|          0|
+    |grp_rgb2yuv_1_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y_fu_72_ap_start_reg  |   1|   0|    1|          0|
+    +-------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                    |  40|   0|   40|          0|
+    +-------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------+-----+-----+------------+------------------+--------------+
+|            RTL Ports            | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++---------------------------------+-----+-----+------------+------------------+--------------+
+|ap_clk                           |   in|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_rst                           |   in|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_start                         |   in|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_done                          |  out|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_continue                      |   in|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_idle                          |  out|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|ap_ready                         |  out|    1|  ap_ctrl_hs|         rgb2yuv.1|  return value|
+|in_channels_ch1_address0         |  out|   18|   ap_memory|   in_channels_ch1|         array|
+|in_channels_ch1_ce0              |  out|    1|   ap_memory|   in_channels_ch1|         array|
+|in_channels_ch1_q0               |   in|    8|   ap_memory|   in_channels_ch1|         array|
+|in_channels_ch2_address0         |  out|   18|   ap_memory|   in_channels_ch2|         array|
+|in_channels_ch2_ce0              |  out|    1|   ap_memory|   in_channels_ch2|         array|
+|in_channels_ch2_q0               |   in|    8|   ap_memory|   in_channels_ch2|         array|
+|in_channels_ch3_address0         |  out|   18|   ap_memory|   in_channels_ch3|         array|
+|in_channels_ch3_ce0              |  out|    1|   ap_memory|   in_channels_ch3|         array|
+|in_channels_ch3_q0               |   in|    8|   ap_memory|   in_channels_ch3|         array|
+|in_width                         |   in|   16|     ap_none|          in_width|       pointer|
+|in_height                        |   in|   16|     ap_none|         in_height|       pointer|
+|out_channels_ch1_din             |  out|    8|     ap_fifo|  out_channels_ch1|       pointer|
+|out_channels_ch1_num_data_valid  |   in|    2|     ap_fifo|  out_channels_ch1|       pointer|
+|out_channels_ch1_fifo_cap        |   in|    2|     ap_fifo|  out_channels_ch1|       pointer|
+|out_channels_ch1_full_n          |   in|    1|     ap_fifo|  out_channels_ch1|       pointer|
+|out_channels_ch1_write           |  out|    1|     ap_fifo|  out_channels_ch1|       pointer|
+|out_channels_ch2_din             |  out|    8|     ap_fifo|  out_channels_ch2|       pointer|
+|out_channels_ch2_num_data_valid  |   in|    2|     ap_fifo|  out_channels_ch2|       pointer|
+|out_channels_ch2_fifo_cap        |   in|    2|     ap_fifo|  out_channels_ch2|       pointer|
+|out_channels_ch2_full_n          |   in|    1|     ap_fifo|  out_channels_ch2|       pointer|
+|out_channels_ch2_write           |  out|    1|     ap_fifo|  out_channels_ch2|       pointer|
+|out_channels_ch3_din             |  out|    8|     ap_fifo|  out_channels_ch3|       pointer|
+|out_channels_ch3_num_data_valid  |   in|    2|     ap_fifo|  out_channels_ch3|       pointer|
+|out_channels_ch3_fifo_cap        |   in|    2|     ap_fifo|  out_channels_ch3|       pointer|
+|out_channels_ch3_full_n          |   in|    1|     ap_fifo|  out_channels_ch3|       pointer|
+|out_channels_ch3_write           |  out|    1|     ap_fifo|  out_channels_ch3|       pointer|
+|out_width_din                    |  out|   16|     ap_fifo|         out_width|       pointer|
+|out_width_num_data_valid         |   in|    2|     ap_fifo|         out_width|       pointer|
+|out_width_fifo_cap               |   in|    2|     ap_fifo|         out_width|       pointer|
+|out_width_full_n                 |   in|    1|     ap_fifo|         out_width|       pointer|
+|out_width_write                  |  out|    1|     ap_fifo|         out_width|       pointer|
+|out_height_din                   |  out|   16|     ap_fifo|        out_height|       pointer|
+|out_height_num_data_valid        |   in|    2|     ap_fifo|        out_height|       pointer|
+|out_height_fifo_cap              |   in|    2|     ap_fifo|        out_height|       pointer|
+|out_height_full_n                |   in|    1|     ap_fifo|        out_height|       pointer|
+|out_height_write                 |  out|    1|     ap_fifo|        out_height|       pointer|
++---------------------------------+-----+-----+------------+------------------+--------------+
+

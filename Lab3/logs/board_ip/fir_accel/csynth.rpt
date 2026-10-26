@@ -1,0 +1,131 @@
+
+
+================================================================
+== Synthesis Summary Report of 'fir_accel'
+================================================================
++ General Information: 
+    * Date:           Mon Oct 26 12:42:48 2026
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        fir_accel
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+    |                Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |         |           |           |     |
+    |                & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF    |    LUT    | URAM|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+    |+ fir_accel                            |     -|  0.34|      134|  1.340e+03|         -|      135|     -|        no|  2 (~0%)|  1 (~0%)|  612 (~0%)|   691 (1%)|    -|
+    | + fir_accel_Pipeline_VITIS_LOOP_16_1  |     -|  2.50|      130|  1.300e+03|         -|      130|     -|        no|        -|        -|   10 (~0%)|   53 (~0%)|    -|
+    |  o VITIS_LOOP_16_1                    |     -|  7.30|      128|  1.280e+03|         1|        1|   128|       yes|        -|        -|          -|          -|    -|
+    | + fir_accel_Pipeline_FIR_TAPS         |     -|  0.39|      132|  1.320e+03|         -|      132|     -|        no|  1 (~0%)|  1 (~0%)|  381 (~0%)|  192 (~0%)|    -|
+    |  o FIR_TAPS                           |     -|  7.30|      130|  1.300e+03|         5|        1|   127|       yes|        -|        -|          -|          -|    -|
+    +---------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register    | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL        | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER        | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER      | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR      | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | sample      | 0x10   | 32    | W      | Data signal of sample            |                                                                      |
+| s_axi_CTRL | clear       | 0x18   | 32    | W      | Data signal of clear             |                                                                      |
+| s_axi_CTRL | result      | 0x20   | 32    | R      | Data signal of result            |                                                                      |
+| s_axi_CTRL | result_ctrl | 0x24   | 32    | R      | Control signal of result         | 0=result_ap_vld                                                      |
++------------+-------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| sample   | in        | int      |
+| clear    | in        | int      |
+| result   | out       | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+----------+---------------------------------------+
+| Argument | HW Interface | HW Type  | HW Info                               |
++----------+--------------+----------+---------------------------------------+
+| sample   | s_axi_CTRL   | register | name=sample offset=0x10 range=32      |
+| clear    | s_axi_CTRL   | register | name=clear offset=0x18 range=32       |
+| result   | s_axi_CTRL   | register | name=result offset=0x20 range=32      |
+| result   | s_axi_CTRL   | register | name=result_ctrl offset=0x24 range=32 |
++----------+--------------+----------+---------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+| Name                                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+| + fir_accel                           | 1   |        |          |     |        |         |
+|  + fir_accel_Pipeline_VITIS_LOOP_16_1 | 0   |        |          |     |        |         |
+|    add_ln16_fu_60_p2                  | -   |        | add_ln16 | add | fabric | 0       |
+|  + fir_accel_Pipeline_FIR_TAPS        | 1   |        |          |     |        |         |
+|    add_ln29_fu_110_p2                 | -   |        | add_ln29 | add | fabric | 0       |
+|    mul_6s_32s_32_2_1_U2               | 1   |        | mul_ln31 | mul | auto   | 1       |
+|    sum_1_fu_133_p2                    | -   |        | sum_1    | add | fabric | 0       |
++---------------------------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++--------------------------------+------+------+--------+---------------+---------+------+---------+
+| Name                           | BRAM | URAM | Pragma | Variable      | Storage | Impl | Latency |
++--------------------------------+------+------+--------+---------------+---------+------+---------+
+| + fir_accel                    | 2    | 0    |        |               |         |      |         |
+|   history_U                    | 1    | -    |        | history       | ram_s2p | auto | 1       |
+|  + fir_accel_Pipeline_FIR_TAPS | 1    | 0    |        |               |         |      |         |
+|    fir_int_int_c_U             | 1    | -    |        | fir_int_int_c | rom_1p  | auto | 1       |
++--------------------------------+------+------+--------+---------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-----------------------------------+---------------------------------------------+
+| Type      | Options                           | Location                                    |
++-----------+-----------------------------------+---------------------------------------------+
+| interface | s_axilite port=sample bundle=CTRL | ../hls/fir_accel.cpp:3 in fir_accel, sample |
+| interface | s_axilite port=clear bundle=CTRL  | ../hls/fir_accel.cpp:4 in fir_accel, clear  |
+| interface | s_axilite port=result bundle=CTRL | ../hls/fir_accel.cpp:5 in fir_accel, result |
+| interface | s_axilite port=return bundle=CTRL | ../hls/fir_accel.cpp:6 in fir_accel, return |
+| pipeline  |                                   | ../scripts/build_board_hls.tcl:3 in fir     |
++-----------+-----------------------------------+---------------------------------------------+
+
+

@@ -1,0 +1,9 @@
+{
+  "dct_blocks": 323,
+  "dct_values": 20672,
+  "coefficient_orthogonality_error": 1.4004030783493976e-15,
+  "idct_full_image_max_error": 2,
+  "idct_full_image_mse": 0.5751190185546875,
+  "idct_shift": "arithmetic floor >>16, per manual",
+  "input_order": "RGB interleaved, raster rows y then columns x"
+}
