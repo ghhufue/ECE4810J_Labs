@@ -1,17 +1,17 @@
 # ECE4810J - Lab 3
 
-PYNQ Overlays and Optimizing HLS Performance through Pipelining | Arty Z7-20 | 26 October 2026
+PYNQ Overlays and Optimizing HLS Performance through Pipelining | Arty Z7-20 | 4 November 2026
 
-This report records completed offline implementation and measured tool results. No physical board was available. SD boot, live PYNQ outputs and board photographs remain pending. The user requested a BOOT.BIN for subsequent board testing.
+This report presents HLS synthesis and simulation results together with the Section 5 PYNQ board results recorded on 2 November 2026. The separate bare-metal BOOT.BIN, the DCT host notebook and the optional FIR host notebook still await physical verification.
 
 | Item | Completed evidence |
 | --- | --- |
 | Tools and target | Vivado / Vitis / Vitis HLS 2022.1; xc7z020clg400-1; 10 ns target clock |
 | Section 2 | RGB/YUV conversion; independent reference; five synthesis runs; actual HLS screenshots |
 | Section 3 | Five DCT solutions; IDCT; 323-block tests; RTL cosimulation; full image recovery |
-| Section 5 | Answers and board notebooks prepared; full custom Arty overlay built; board execution pending |
-| Optional Section 6 | 128-tap FIR; baseline and pipelined synthesis; golden test; RTL test; host notebook |
-| Board image | Matching FSBL, routed bitstream and ARM self-test application packaged and validated |
+| Section 5 | Executed PYNQ notebooks, two LED photos, PS and PL resize timings, and answers to both overlay questions |
+| Optional Section 6 | 128-tap FIR synthesis and simulation complete. PYNQ execution and plots pending. |
+| Bare-metal board image | Matching FSBL, routed bitstream and ARM self-test application packaged and checked offline. Cold boot and UART tests pending. |
 
 ## 2.4 - Baseline function metrics
 
@@ -85,24 +85,48 @@ Native C and independent NumPy models agree for all 41,344 checked transform val
 
 # 5 - Overlays and board work
 
+The Section 5 board session used a Digilent Arty Z7-20 running the PYNQ-Z1 3.1.1 image and Python 3.10.4. The session and its artifacts are recorded in tests/BOARD_TEST_RECORD.md.
+
+## 5.1 - Loading the base overlay
+
+lab3_1.ipynb loaded BaseOverlay("base.bit"), inspected the overlay and its GPIO and HDMI objects, and toggled LD0. The board test record confirms the visible LED toggle.
+
+## 5.2 - Partial reconfiguration
+
+The experiment reused the precompiled PYNQ-Z1 PR files from yunqu/partial_reconfig_example. Both boards use the XC7Z020-1CLG400C, and LD0 through LD3 use the same pins (R14, P14, N16 and M14). The notebook loaded gpio_pr.bit as the static design.
+
+With gpio_pr.hwh exported by Vivado 2018.3, PYNQ 3.1.1 exposed gpio_0 as an IP and returned an empty hierarchy list. The notebook therefore used Bitstream(..., partial=True).download(...) to program led_5.bit and led_a.bit through Linux fpga_manager in partial mode. The helper catches the metadata KeyError reported during the subsequent PS AXI port-width update. The LED states in Figures 3 and 4 verify the two configurations on the board.
+
+To reproduce the run, copy the gpio_pr, led_5 and led_a .bit/.hwh pairs from boards/Pynq-Z1/gpio_pr/notebooks/partial_reconfig in the upstream repository into partial_reconfig/ beside lab3_2.ipynb. The six upstream files are fetched separately.
+
+![Figure 3. Partial image led_5.bit (0x5). LD2 and LD0 are on.](screenshots/section5_2_led_0x5.jpg)
+
+![Figure 4. Partial image led_a.bit (0xA). LD3 and LD1 are on.](screenshots/section5_2_led_0xA.jpg)
+
+# 5 - Resize, custom overlay and discussion
+
+## 5.3 - PYNQ HelloWorld image resize
+
+The two notebooks reduced the same 3840 x 2160 image to 1920 x 1080 using bilinear resize. The PL timing includes DMA transfers and construction of the output PIL image. The PS notebook timed Pillow Image.resize.
+
+| Path | Recorded time per loop | Timing statistic |
+| --- | --- | --- |
+| PL resizer | 247 ms | Best of three runs |
+| PS (Pillow) | 1.1 s +/- 195 microseconds | Mean and standard deviation across seven runs |
+
+The reported times give an approximate 4.5x speedup for this example. The PL and PS notebooks report different timing statistics.
+
+## 5.4 - Custom overlay and driver
+
+lab3_3.ipynb loaded the custom Arty lab3.bit with its lab3.hwh. The scalar_add core returned 7 through register_map for 3 + 4, and 9 through direct MMIO for 4 + 5. After binding AddDriver to the HLS IP, its Python add(15, 20) method returned 35.
+
 ## 5.5.1 - Advantages of overlays
 
-An overlay packages FPGA hardware as a reusable library with discoverable metadata and Python drivers. Application developers can call accelerated functions from Python, reuse IP across applications, and reconfigure hardware at runtime. Matching HWH metadata exposes IP names, addresses and registers, reducing dependence on handwritten address constants. Partial reconfiguration can change one supported region while retaining the static design.
+An overlay packages a bitstream with hardware metadata and Python drivers. PYNQ uses the HWH to discover IP, addresses, interrupts and register fields. In Section 5.4, the AddDriver API hid the MMIO offsets from the caller. Overlays can be loaded at runtime and reused across notebooks. Partial reconfiguration also allows a compatible module to be swapped while the static design stays configured, as shown by the two LED patterns in Section 5.2.
 
 ## 5.5.2 - Software versus acceleration
 
-Software offers rapid iteration and flexible control flow with low setup cost. Hardware is attractive for regular, parallel, compute-intensive kernels or sustained streaming workloads, where deterministic timing and throughput matter. The choice should consider end-to-end latency, data transfer and launch overhead, batch size, arithmetic precision, BRAM/DSP budget, power, engineering effort and reuse. A small scalar operation may be slower over AXI than on the CPU. The FIR notebook measures host elapsed time, including register transfers, rather than treating HLS kernel cycles as application speedup.
-
-| Section | Prepared | Evidence still needed |
-| --- | --- | --- |
-| 5.1 | lab3_1.ipynb | Execute BaseOverlay discovery and LED toggle; save real outputs |
-| 5.2 | lab3_2.ipynb with file checks | Arty-specific PR full/partial designs; execute both configurations; two board photographs |
-| 5.3 | Procedure in ON_BOARD.md | Compatible Arty PYNQ/HelloWorld image; run original resizer notebooks; screenshots and measured timing |
-| 5.4 | lab3_3.ipynb; custom Arty bit/hwh | Execute register and AddDriver checks, yielding 7, 9 and 35; save outputs |
-
-The manual points to a PYNQ-Z1 partial-reconfiguration example. A common FPGA part does not make bitstreams board-compatible: pin constraints and PS/DDR configuration also matter. This delivery does not include Arty PR bitstreams. The prepared PR notebook stops until board-matched files are supplied. The full lab3 overlay is not a partial-reconfiguration design.
-
-All notebooks are intentionally unexecuted. No board photos, fabricated PYNQ results or synthetic notebook outputs are supplied. BOOT.BIN runs a bare-metal test program; Jupyter requires a separate PYNQ Linux image.
+Software offers flexible control flow, quick iteration and low setup cost. PL acceleration suits regular parallel or streaming kernels with enough work to justify DMA and launch overhead, as the image resize illustrates. For a scalar add, host and MMIO overhead can dominate the arithmetic. Evaluate the fraction of application time spent in the kernel, end-to-end latency, throughput, numerical precision, FPGA resource use, power and the effort to design and verify the accelerator. The full answers are in report/Section5_5_Answers.md.
 
 # 6 - Optional 128-tap FIR
 
@@ -147,12 +171,14 @@ Vivado can create a nonempty D:/dev/null text file on Windows; HLS make then att
 | Section 3 comparisons and memory | report/dct_comparison.csv; screenshots/dct_*.jpg |
 | Section 3.9 code and output | lab3_starter/dct/dct.c and output.dat |
 | Recovered images | images/lena_yuv_recovered.png; images/lena_idct_recovered.png |
-| Notebook sources | notebooks/lab3_1.ipynb; lab3_2.ipynb; lab3_3.ipynb; host_fir.ipynb |
+| Section 5 notebooks with outputs | notebooks/lab3_1.ipynb, lab3_2.ipynb and lab3_3.ipynb |
+| Section 5 board evidence and answers | report/screenshots/section5_* (including the 5.3 PS and PL captures), tests/BOARD_TEST_RECORD.md and report/Section5_5_Answers.md |
+| DCT and FIR host notebooks | notebooks/host_dct.ipynb and host_fir.ipynb (board execution pending) |
 | Board test image and metadata | boot/BOOT.BIN; boot/manifest.json; exported/lab3.bit and lab3.hwh |
 | Real simulation evidence | logs/native_verification.txt; logs/cosim/; logs/add_axi_simulation.txt |
 | Timing and boot validation | logs/timing.txt; logs/utilization.txt; logs/boot_validation.txt |
 
-Primary references: the provided ECE4810J Fall 2026 Lab 3 Arty manual, sections 2, 3, 5 and 6; official PYNQ 2.7 Overlay Tutorial at https://pynq.readthedocs.io/en/v2.7.0/overlay_design_methodology/overlay_tutorial.html; Xilinx/PYNQ-HelloWorld repository; yunqu/partial_reconfig_example repository linked by the manual. PYNQ execution details must be checked against the installed board image.
+Primary references include the ECE4810J Fall 2026 Lab 3 Arty manual, the official PYNQ Overlay Tutorial, the Xilinx/PYNQ-HelloWorld repository and the upstream PR example at https://github.com/yunqu/partial_reconfig_example (commit 107176a7cf0f0a7ba1dd898ec42cfc796c30297d).
 
 # Appendix - HLS GUI evidence
 
