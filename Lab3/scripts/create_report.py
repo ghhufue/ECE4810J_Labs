@@ -2,7 +2,6 @@
 from pathlib import Path
 import html
 import json
-import shutil
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -12,7 +11,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from PIL import Image as PILImage
 
 LAB=Path(__file__).resolve().parents[1]
-OUT=LAB.parent/'output/pdf/Lab3_Report.pdf'
+OUT=LAB/'report/Lab3_Report.pdf'
 M=json.loads((LAB/'report/hls_metrics.json').read_text())
 REF=json.loads((LAB/'logs/reference_metrics.json').read_text())
 BOOT=json.loads((LAB/'boot/manifest.json').read_text())
@@ -181,6 +180,5 @@ OUT.parent.mkdir(parents=True,exist_ok=True)
 doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=28,leftMargin=28,topMargin=30,bottomMargin=42,
     title='ECE4810J Lab 3 - Arty Z7-20',author='Lab 3 implementation')
 doc.build(story,onFirstPage=footer,onLaterPages=footer)
-(LAB/'report/Lab3_Report.md').write_text('\n'.join(md),encoding='utf-8')
-shutil.copyfile(OUT,LAB/'report/Lab3_Report.pdf')
+OUT.with_suffix('.md').write_text('\n'.join(md),encoding='utf-8')
 print(OUT)
