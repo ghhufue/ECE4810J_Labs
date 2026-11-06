@@ -11,15 +11,13 @@ The following summarizes my contribution and my partner's contribution to each s
 
 | Part | Your work | Your partner's work | Your score (0-5) | Your partner's score (0-5) |
 | --- | --- | --- | --- | --- |
-| Section 2 (35%) | Implemented the RGB-to-YCbCr HLS kernel, ran C simulation and synthesis, answered Section 2.4, captured the Performance and Utilization comparison, applied the DATAFLOW directive and exported the optional RTL | Cross-checked my HLS reports against the stored screenshots, confirmed the quoted numbers and the DATAFLOW / RTL-export evidence, and assembled the Section 2 deliverables | 5 | 3 |
-| Section 3 (35%) | Built the five 8x8 DCT solutions, analysed the memory utilization, produced the five-way comparison report and generated dct.c, output.dat and the recovered image | Verified that all five solutions are present and consistent, checked the memory-utilization claim and the regenerated output.dat / recovered image, and packaged the evidence | 5 | 3 |
-| Section 5.1 - 5.4 (30%) | Exported lab3.bit / lab3.hwh, wrote the notebook skeletons, set up the Lab3 repository structure and packaged the lab3_pynq_test release with all artefacts | Prepared the SD card and board, fixed the network sharing, ran every notebook on the board, replaced the broken pr_download path with a low-level partial download after diagnosing the metadata problem, and captured all screenshots and both LED photos | 3 | 5 |
-| Section 5.5 and board test record | Reviewed the answers and supplied the implementation data used in the software/hardware discussion | Wrote the Section 5.5 answers from the measured 247 ms (PL) versus 1.1 s (PS) figures and completed BOARD_TEST_RECORD.md including both fault analyses | 3 | 5 |
-| Report and evidence integration | Compiled the Lab3 report, wrote the Sections 2, 3 and 5 narrative and produced the final PDF | Organised and committed the executed notebooks, screenshots, LED photos and test record, and kept the evidence index accurate | 4 | 4 |
+| Section 2 | RGB-to-YCbCr kernel, C simulation and synthesis, the 2.4 answers, the comparison screenshots, the DATAFLOW experiment and the RTL export | Reviewed the HLS reports, checked the figures against the stored screenshots, and assembled the section evidence | 5 | 3 |
+| Section 3 | The five DCT solutions, memory utilization analysis, the five-way comparison report, dct.c, output.dat and the recovered image | Checked the five solutions and their utilization evidence, confirmed output.dat and the recovered image, and packaged the deliverables | 5 | 3 |
+| Section 5 | Exported lab3.bit / lab3.hwh, wrote the notebook skeletons, and packaged the lab3_pynq_test release | Board work: SD image and board setup, Internet Connection Sharing fix, all notebook runs, the low-level partial-reconfiguration fix, and both LED photos | 3 | 5 |
+| Section 5.5 | Reviewed the answers and supplied the implementation data | Wrote both answers from the measured 247 ms (PL) and 1.1 s (PS) results, and completed BOARD_TEST_RECORD.md | 3 | 5 |
+| Report and evidence | Compiled the report, wrote the narrative and built the final PDF | Published the executed notebooks, screenshots, LED photos and test record to the repository | 4 | 4 |
 
-## Additional contribution notes
-
-I owned the Vitis HLS and Vivado work of Sections 2 and 3, the bitstream export and the notebook skeletons used in Section 5, and the final report. Zhao Tong verified the Section 2 and Section 3 deliverables against the stored evidence and handled all board-facing work in Section 5 - image writing, the Internet Connection Sharing repair, every notebook run, the partial-reconfiguration debugging that made the supplied PR flow usable on PYNQ 3.1, both LED photographs, the 5.5 answers and the board test record - and published the evidence to the repository. Neither of us attempted the optional Sections 4 and 6. We reviewed each other's results before submission.
+**Additional notes:** I covered the HLS/Vivado design and the report; Zhao Tong covered all board work and reviewed the design deliverables. Sections 4 and 6 were not attempted by either of us.
 
 **Evaluator signature (optional):** ____________________  
 **Date (optional):** 6 November 2026
